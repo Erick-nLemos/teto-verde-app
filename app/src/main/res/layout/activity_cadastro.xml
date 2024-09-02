@@ -31,7 +31,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btnProx"
+            android:id="@+id/btnSalvar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
@@ -48,9 +48,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout2"
         android:layout_width="373dp"
-        android:layout_height="592dp"
+        android:layout_height="600dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/ic_launcher_background"
@@ -64,9 +63,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginBottom="55dp"
             android:paddingLeft="30dp"
             android:text="@string/strCadTitulo"
             android:textColor="@color/buttons"
@@ -214,12 +212,12 @@
             android:paddingLeft="15dp"
             android:text="Nº"
             app:layout_constraintStart_toEndOf="@+id/editTextText6"
-            tools:layout_editor_absoluteY="392dp" />
+            tools:layout_editor_absoluteY="396dp" />
 
         <EditText
             android:id="@+id/editTextText7"
             android:layout_width="84dp"
-            android:layout_height="42dp"
+            android:layout_height="43dp"
             android:layout_marginStart="20dp"
             android:background="@color/entradaDados"
             android:ems="10"
@@ -227,7 +225,7 @@
             android:paddingLeft="15dp"
             android:text="UF"
             app:layout_constraintStart_toEndOf="@+id/editTextText8"
-            tools:layout_editor_absoluteY="443dp" />
+            tools:layout_editor_absoluteY="449dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

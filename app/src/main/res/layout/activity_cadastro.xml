@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cadBack"
+    tools:context=".Cadastro">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lightBack"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:text="@string/strVoltar"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnProx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="20dp"
+            android:paddingRight="40dp"
+            android:text="@string/strProximo"
+            android:textAlignment="textEnd"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="373dp"
+        android:layout_height="592dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/ic_launcher_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtCadTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="30dp"
+            android:text="@string/strCadTitulo"
+            android:textColor="@color/buttons"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editNomeEmp"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Nome Empresa" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="CNPJ ou CPF" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Telefone" />
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="CEP" />
+
+        <EditText
+            android:id="@+id/editTextText5"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Rua" />
+
+        <EditText
+            android:id="@+id/editTextText6"
+            android:layout_width="220dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Bairro" />
+
+        <EditText
+            android:id="@+id/editTextText8"
+            android:layout_width="220dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Cidade" />
+
+        <EditText
+            android:id="@+id/editTextText10"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Complemento" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

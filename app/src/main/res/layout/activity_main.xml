@@ -47,6 +47,7 @@
         android:layout_marginBottom="28dp"
         android:backgroundTint="@color/buttons"
         android:elevation="20dp"
+        android:onClick="clickComecar"
         android:text="Começar"
         android:textSize="20sp"
         app:cornerRadius="30dp"

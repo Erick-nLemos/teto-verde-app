@@ -2,9 +2,8 @@ package com.ericklemos.tetoverde;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
-public class Cadastro02 extends AppCompatActivity {
+public class Cadastro2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

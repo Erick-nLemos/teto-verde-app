@@ -18,28 +18,35 @@
 
         <Button
             android:id="@+id/btnVoltar"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="50dp"
             android:layout_weight="1"
             android:paddingLeft="40dp"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/strVoltar"
             android:textAlignment="textStart"
             android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnProx"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
             android:paddingRight="40dp"
+            android:paddingBottom="10dp"
             android:text="@string/strProximo"
             android:textAlignment="textEnd"
             android:textSize="18sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="373dp"
         android:layout_height="592dp"
         android:layout_marginStart="10dp"
@@ -47,7 +54,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/ic_launcher_background"
-        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,116 +63,171 @@
             android:id="@+id/txtCadTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="40dp"
             android:paddingLeft="30dp"
             android:text="@string/strCadTitulo"
             android:textColor="@color/buttons"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/editNomeEmp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editNomeEmp"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Nome Empresa" />
+            android:text="Nome Empresa"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText2"
+            app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo" />
 
         <EditText
             android:id="@+id/editTextText2"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="CNPJ ou CPF" />
+            android:text="CNPJ ou CPF"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText3"
+            app:layout_constraintTop_toBottomOf="@+id/editNomeEmp" />
 
         <EditText
             android:id="@+id/editTextText3"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Telefone" />
+            android:text="Telefone"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
         <EditText
             android:id="@+id/editTextText4"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="CEP" />
+            android:text="CEP"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText5"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
 
         <EditText
             android:id="@+id/editTextText5"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Rua" />
+            android:text="Rua"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText6"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
         <EditText
             android:id="@+id/editTextText6"
-            android:layout_width="220dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="230dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Bairro" />
+            android:text="Bairro"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText8"
+            app:layout_constraintEnd_toEndOf="@+id/editTextText8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextText8"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
         <EditText
             android:id="@+id/editTextText8"
-            android:layout_width="220dp"
-            android:layout_height="42dp"
+            android:layout_width="230dp"
+            android:layout_height="0dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Cidade" />
+            android:text="Cidade"
+            app:layout_constraintBottom_toTopOf="@+id/editTextText10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
 
         <EditText
             android:id="@+id/editTextText10"
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="54dp"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Complemento" />
+            android:text="Complemento"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/editTextText8"
+            app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
 
-    </LinearLayout>
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Nº"
+            app:layout_constraintStart_toEndOf="@+id/editTextText6"
+            tools:layout_editor_absoluteY="392dp" />
+
+        <EditText
+            android:id="@+id/editTextText7"
+            android:layout_width="84dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="UF"
+            app:layout_constraintStart_toEndOf="@+id/editTextText8"
+            tools:layout_editor_absoluteY="443dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

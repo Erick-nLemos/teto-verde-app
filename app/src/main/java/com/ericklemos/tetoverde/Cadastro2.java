@@ -1,6 +1,8 @@
 package com.ericklemos.tetoverde;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -13,6 +15,10 @@ public class Cadastro2 extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro2);
     }
     
+    public void clickSalvar(View view){
+        Intent tela = new Intent(getApplicationContext(), Perfil.class);
+        startActivity(tela);
+    }
 
     public void clickVoltar(View view){
         finish();

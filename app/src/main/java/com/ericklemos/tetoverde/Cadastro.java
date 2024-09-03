@@ -16,6 +16,7 @@ public class Cadastro extends AppCompatActivity {
     }
 
     public void clickProx(View view){
+        setTheme(R.style.Base_Theme_TetoVerde);
         tela = new Intent(getApplicationContext(), Cadastro2.class);
         startActivity(tela);
     }

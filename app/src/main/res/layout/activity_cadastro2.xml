@@ -35,7 +35,6 @@
             android:id="@+id/imgTelaCad"
             android:layout_width="299dp"
             android:layout_height="466dp"
-            android:src="@tools:sample/avatars"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +45,7 @@
         <EditText
             android:id="@+id/editTextText13"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="55dp"
             android:layout_marginRight="20dp"
@@ -63,7 +62,7 @@
         <EditText
             android:id="@+id/editTextText14"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
@@ -80,7 +79,7 @@
         <EditText
             android:id="@+id/editTextText15"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
+            android:layout_height="48dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
@@ -109,6 +108,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="50dp"
             android:layout_weight="1"
+            android:onClick="clickVoltar"
             android:paddingLeft="40dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"

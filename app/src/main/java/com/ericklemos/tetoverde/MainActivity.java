@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Intent tela;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Base_Theme_TetoVerde);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }

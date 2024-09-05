@@ -48,8 +48,7 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout2"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="374dp"
         android:layout_height="588dp"
         android:layout_marginStart="15dp"
@@ -57,183 +56,265 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:background="@color/ic_launcher_background"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/txtCadTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginBottom="35dp"
-            android:paddingLeft="30dp"
-            android:text="@string/strCadTitulo"
-            android:textColor="@color/buttons"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/editNomeEmp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ic_launcher_background"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editNomeEmp"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Nome Empresa"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText2"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo" />
 
-        <EditText
-            android:id="@+id/editTextText2"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="CNPJ ou CPF"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText3"
-            app:layout_constraintTop_toBottomOf="@+id/editNomeEmp" />
+            <TextView
+                android:id="@+id/txtCadTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="45dp"
+                android:paddingLeft="30dp"
+                android:text="@string/strCadTitulo"
+                android:textColor="@color/buttons"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextText3"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Telefone"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText4"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView12"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo">
 
-        <EditText
-            android:id="@+id/editTextText4"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="CEP"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText5"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+                <EditText
+                    android:id="@+id/editNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Name:" />
 
-        <EditText
-            android:id="@+id/editTextText5"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Rua"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText6"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
-        <EditText
-            android:id="@+id/editTextText6"
-            android:layout_width="230dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Bairro"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText8"
-            app:layout_constraintEnd_toEndOf="@+id/editTextText8"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/editTextText8"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <EditText
-            android:id="@+id/editTextText8"
-            android:layout_width="230dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Cidade"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView13"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView12">
 
-        <EditText
-            android:id="@+id/editTextText10"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="54dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Complemento"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/editTextText8"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText8" />
+                <EditText
+                    android:id="@+id/editCNPJ"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="CNPJ:" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="84dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Nº"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText7"
-            app:layout_constraintStart_toEndOf="@+id/editTextText6"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView14"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView13">
 
-        <EditText
-            android:id="@+id/editTextText7"
-            android:layout_width="84dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="UF"
-            app:layout_constraintBottom_toTopOf="@+id/editTextText10"
-            app:layout_constraintStart_toEndOf="@+id/editTextText8" />
+                <EditText
+                    android:id="@+id/editTel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Telefone:" />
+            </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView15"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView14">
+
+                <EditText
+                    android:id="@+id/editCEP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="CEP:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView16"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView15">
+
+                <EditText
+                    android:id="@+id/editRua"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Rua:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView17"
+                android:layout_width="230dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView16">
+
+                <EditText
+                    android:id="@+id/editBairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Bairro:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView18"
+                android:layout_width="230dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView17">
+
+                <EditText
+                    android:id="@+id/editCidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Cidade:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView18">
+
+                <EditText
+                    android:id="@+id/editComp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Complemento:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView19"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/materialCardView17"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView16">
+
+                <EditText
+                    android:id="@+id/editNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Nº:" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView20"
+                android:layout_width="84dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/materialCardView18"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView19">
+
+                <EditText
+                    android:id="@+id/editUF"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="UF:" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

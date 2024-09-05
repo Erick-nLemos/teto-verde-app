@@ -292,7 +292,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/lightBack"
-            android:orientation="horizontal"></LinearLayout>
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnNavCarrinho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:src="@drawable/carrinho_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:src="@drawable/home_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:onClick="clickPerfil"
+                android:src="@drawable/user_icon" />
+        </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

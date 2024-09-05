@@ -16,7 +16,7 @@ public class Cadastro2 extends AppCompatActivity {
     }
     
     public void clickSalvar(View view){
-        Intent tela = new Intent(getApplicationContext(), Perfil.class);
+        Intent tela = new Intent(getApplicationContext(), Produtos01.class);
         startActivity(tela);
     }
 

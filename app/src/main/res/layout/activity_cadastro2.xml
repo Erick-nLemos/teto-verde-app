@@ -7,97 +7,129 @@
     android:background="@color/cadBack"
     tools:context=".Cadastro2">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="350dp"
         android:layout_height="588dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/ic_launcher_background"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441">
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
-            android:id="@+id/txtCadTitulo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="35dp"
-            android:paddingLeft="30dp"
-            android:text="@string/strCadTitulo"
-            android:textColor="@color/buttons"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imgTelaCad"
-            android:layout_width="299dp"
-            android:layout_height="466dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ic_launcher_background"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/img_cad" />
+            app:layout_constraintVertical_bias="0.441">
 
-        <EditText
-            android:id="@+id/editTextText13"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/entradaDados"
-            android:backgroundTint="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="E-mail"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo2" />
 
-        <EditText
-            android:id="@+id/editTextText14"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:password="false"
-            android:text="Criar Senha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText13" />
+            <TextView
+                android:id="@+id/txtCadTitulo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="35dp"
+                android:paddingLeft="30dp"
+                android:text="@string/strCadTitulo"
+                android:textColor="@color/buttons"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextText15"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@color/entradaDados"
-            android:ems="10"
-            android:inputType="text"
-            android:paddingLeft="15dp"
-            android:text="Confirmar Senha"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText14" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/imgTelaCad"
+                android:layout_width="294dp"
+                android:layout_height="458dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/img_cad" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView12"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo2">
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="E-mail" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView13"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView12">
+
+                <EditText
+                    android:id="@+id/editPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Crie sua Senha" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView14"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView13">
+
+                <EditText
+                    android:id="@+id/editConfirmPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/entradaDados"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="15dp"
+                    android:text="Confirmar Senha" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
 
     <LinearLayout
         android:id="@+id/linearLayout3"

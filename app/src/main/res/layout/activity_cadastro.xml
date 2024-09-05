@@ -100,14 +100,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo">
 
                 <EditText
-                    android:id="@+id/editNome"
+                    android:id="@+id/editEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Name:" />
+                    android:text="Name" />
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -132,7 +132,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="CNPJ:" />
+                    android:text="CNPJ" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -155,7 +155,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Telefone:" />
+                    android:text="Telefone" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -178,7 +178,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="CEP:" />
+                    android:text="CEP" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -201,7 +201,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Rua:" />
+                    android:text="Rua" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -222,7 +222,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Bairro:" />
+                    android:text="Bairro" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -243,7 +243,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Cidade:" />
+                    android:text="Cidade" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -265,7 +265,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Complemento:" />
+                    android:text="Complemento" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -288,7 +288,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Nº:" />
+                    android:text="Nº" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -311,7 +311,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="UF:" />
+                    android:text="UF" />
             </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

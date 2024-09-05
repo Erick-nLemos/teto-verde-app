@@ -9,12 +9,14 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
-        android:layout_width="374dp"
+        android:layout_width="354dp"
         android:layout_height="588dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
         app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,9 +46,9 @@
                 android:id="@+id/materialCardView2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="45dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,9 +69,9 @@
                 android:id="@+id/materialCardView3"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -90,9 +92,9 @@
                 android:id="@+id/materialCardView4"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -113,9 +115,9 @@
                 android:id="@+id/materialCardView5"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,9 +138,9 @@
                 android:id="@+id/materialCardView6"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -159,9 +161,9 @@
                 android:id="@+id/materialCardView7"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +184,7 @@
                 android:id="@+id/materialCardView8"
                 android:layout_width="230dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintStart_toStartOf="parent"
@@ -203,7 +205,7 @@
                 android:id="@+id/materialCardView9"
                 android:layout_width="230dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintStart_toStartOf="parent"
@@ -224,7 +226,7 @@
                 android:id="@+id/materialCardView10"
                 android:layout_width="84dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/entradaDados"
@@ -247,7 +249,7 @@
                 android:id="@+id/materialCardView11"
                 android:layout_width="84dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/entradaDados"
@@ -263,7 +265,7 @@
                     android:ems="10"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Nº: " />
+                    android:text="UF " />
             </com.google.android.material.card.MaterialCardView>
 
 
@@ -276,17 +278,15 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/lightBack"
         android:backgroundTint="@color/lightBack"
         app:cardBackgroundColor="@color/lightBack"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -299,8 +299,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="no"
                 android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
                 android:src="@drawable/carrinho_icon" />
 
             <ImageButton
@@ -308,8 +308,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="no"
                 android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
                 android:src="@drawable/home_icon" />
 
             <ImageButton
@@ -317,8 +317,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="no"
                 android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
                 android:onClick="clickPerfil"
                 android:src="@drawable/user_icon" />
         </LinearLayout>

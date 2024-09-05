@@ -22,7 +22,7 @@ public class Produtos01 extends AppCompatActivity {
     }
 
     public void clickPerfil(View view){
-        Intent tela = new Intent(getApplicationContext(), Perfil.class);
+        Intent tela = new Intent(getApplication(), Perfil.class);
         startActivity(tela);
     }
 

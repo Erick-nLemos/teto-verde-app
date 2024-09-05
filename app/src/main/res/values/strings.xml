@@ -53,4 +53,7 @@
     <string name="strValorRucula">4,99</string>
     <string name="strDescRuculaTitulo">Rúcula (180g)</string>
     <string name="strDescRucula">Rúcula fresca e nutritiva, cultivada em fazenda indoor com tecnologia avançada para garantir sabor e qualidade excepcionais o ano todo.</string>
+    <string name="strSubtrair">-</string>
+    <string name="strQtd">0</string>
+    <string name="strSomar">+</string>
 </resources>

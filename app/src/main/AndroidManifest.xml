@@ -13,16 +13,16 @@
         android:theme="@style/Theme.TetoVerde"
         tools:targetApi="31">
         <activity
-            android:name=".Produtos04"
+            android:name=".ProdutoRepolhoVerde"
             android:exported="false" />
         <activity
-            android:name=".Produtos03"
+            android:name=".ProdutoAlfaceLisa"
             android:exported="false" />
         <activity
-            android:name=".Produtos02"
+            android:name=".ProdutoAlfaceC"
             android:exported="false" />
         <activity
-            android:name=".Produtos01"
+            android:name=".ProdutoRucula"
             android:exported="false" />
         <activity
             android:name=".Perfil"

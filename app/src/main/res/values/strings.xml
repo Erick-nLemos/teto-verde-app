@@ -56,4 +56,10 @@
     <string name="strSubtrair">-</string>
     <string name="strQtd">0</string>
     <string name="strSomar">+</string>
+    <string name="strValorAlfaceCrespo">1,99</string>
+    <string name="erro06" />
+    <string name="strDescAlfaceC">Alface Crespa (275g)</string>
+    <string name="strDescAlfaceLTitulo">Alface Lisa (275g)</string>
+    <string name="strValorAlfaceL">1,49</string>
+    <string name="strDescRepolhoVTitulo">Repolho Verde (600g)</string>
 </resources>

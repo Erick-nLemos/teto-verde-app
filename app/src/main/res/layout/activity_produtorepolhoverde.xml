@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProdutoRepolhoVerde">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="350dp"
+                android:layout_height="343dp"
+                android:layout_marginStart="152dp"
+                android:layout_marginBottom="132dp"
+                android:adjustViewBounds="false"
+                android:rotation="-80"
+                app:layout_constraintBottom_toTopOf="@+id/txtDiv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/img_cad" />
+
+            <TextView
+                android:id="@+id/txtProdTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="35dp"
+                android:paddingLeft="30dp"
+                android:text="@string/strProdutos"
+                android:textColor="@color/buttons"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgProd"
+                android:layout_width="185dp"
+                android:layout_height="184dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="35dp"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toStartOf="@+id/materialCardView21"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtProdTitulo"
+                app:srcCompat="@drawable/repolho_verde" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView21"
+                android:layout_width="145dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="152dp"
+                app:cardBackgroundColor="@color/cadBack"
+                app:layout_constraintBottom_toTopOf="@+id/txtDiv"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/cadBack"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtSubtrair"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="clickSub"
+                        android:text="@string/strSubtrair"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtQtd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/strQtd"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtSomar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="clickSomar"
+                        android:text="@string/strSomar"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtReais"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="68dp"
+                android:text="@string/strReais"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/txtValor"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView21" />
+
+            <TextView
+                android:id="@+id/txtValor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:text="@string/strValorRucula"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView21" />
+
+            <TextView
+                android:id="@+id/txtDiv"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/entradaDados"
+                android:textColor="@color/entradaDados"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgProd" />
+
+            <TextView
+                android:id="@+id/txtRepolhoVerde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/strDescRepolhoVTitulo"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDiv" />
+
+            <TextView
+                android:id="@+id/txtDescRucula"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="19dp"
+                android:text="@string/strDescRucula"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRepolhoVerde" />
+
+            <Button
+                android:id="@+id/btnCarrinho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/buttons"
+                android:text="Carrinho"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescRucula" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MCardViewNav"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/lightBack"
+        android:backgroundTint="@color/lightBack"
+        app:cardBackgroundColor="@color/lightBack"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightBack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnNavCarrinho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:src="@drawable/carrinho_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:src="@drawable/home_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="no"
+                android:backgroundTint="@color/lightBack"
+                android:onClick="clickPerfil"
+                android:src="@drawable/user_icon" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     public void clickPerfil(View view){
+        finish();
         Intent tela = new Intent(getApplicationContext(), Perfil.class);
         startActivity(tela);
     }

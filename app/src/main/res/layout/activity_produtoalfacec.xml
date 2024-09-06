@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Produtos01">
+    tools:context=".ProdutoAlfaceC">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -61,12 +61,12 @@
                 app:layout_constraintEnd_toStartOf="@+id/materialCardView21"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtProdTitulo"
-                app:srcCompat="@drawable/rucula" />
+                app:srcCompat="@drawable/alface_crespa" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView21"
-                android:layout_width="130dp"
-                android:layout_height="35dp"
+                android:layout_width="145dp"
+                android:layout_height="48dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="152dp"
                 app:cardBackgroundColor="@color/cadBack"
@@ -85,6 +85,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:onClick="clickSub"
                         android:text="@string/strSubtrair"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -105,6 +106,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:onClick="clickSomar"
                         android:text="@string/strSomar"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -128,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
-                android:text="@string/strValorRucula"
+                android:text="@string/strValorAlfaceCrespo"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView21" />
@@ -145,12 +147,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/imgProd" />
 
             <TextView
-                android:id="@+id/txtRucula"
+                android:id="@+id/txtAlfC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/strDescRuculaTitulo"
+                android:text="@string/strDescAlfaceC"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +170,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtRucula" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAlfC" />
 
             <Button
                 android:id="@+id/btnCarrinho"
@@ -238,4 +240,5 @@
                 android:src="@drawable/user_icon" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

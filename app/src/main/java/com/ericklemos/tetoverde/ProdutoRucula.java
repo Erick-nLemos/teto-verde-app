@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class ProdutoRucula extends AppCompatActivity {
 
-    TextView txtSomar, txtSubtrair, txtQtd;
+    TextView txtQtd;
     int qtd;
 
     @Override

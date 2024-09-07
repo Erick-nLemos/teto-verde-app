@@ -62,4 +62,5 @@
     <string name="strDescAlfaceLTitulo">Alface Lisa (275g)</string>
     <string name="strValorAlfaceL">1,49</string>
     <string name="strDescRepolhoVTitulo">Repolho Verde (600g)</string>
+    <string name="strSalvarAlt">Salvar Alteração</string>
 </resources>

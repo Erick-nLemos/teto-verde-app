@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ProdutoAlfaceLisa extends AppCompatActivity {
 
-    TextView txtSomar, txtSubtrair, txtQtd;
+    TextView txtQtd;
     int qtd;
 
     @Override

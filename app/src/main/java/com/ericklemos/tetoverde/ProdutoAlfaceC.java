@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class ProdutoAlfaceC extends AppCompatActivity {
 
-    TextView txtSomar, txtSubtrair, txtQtd;
+    TextView txtQtd;
     int qtd;
 
     @Override
@@ -32,6 +32,7 @@ public class ProdutoAlfaceC extends AppCompatActivity {
         txtQtd.setText(String.format("%d", qtd));
     }
 
+    /*
     public void clickHome(View view){
 
     }
@@ -39,6 +40,7 @@ public class ProdutoAlfaceC extends AppCompatActivity {
     public void clickCarrinho(View view){
 
     }
+    */
 
     public void clickPerfil(View view){
         Intent tela = new Intent(getApplicationContext(), Perfil.class);

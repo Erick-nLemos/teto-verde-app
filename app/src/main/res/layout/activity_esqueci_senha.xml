@@ -136,17 +136,18 @@
         app:layout_constraintStart_toStartOf="parent" >
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:id="@+id/imageView4"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars" />
+            android:src="@tools:sample/avatars"
+            tools:srcCompat="@drawable/img_esqueci_pass" />
 
         <Button
-            android:id="@+id/btnVoltar"
-            android:layout_width="50dp"
+            android:id="@+id/btnCadastro"
+            android:layout_width="30dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_weight="1"

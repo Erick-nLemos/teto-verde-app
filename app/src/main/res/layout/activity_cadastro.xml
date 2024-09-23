@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:id="@+id/btnVoltar"
+            android:id="@+id/btnCadastro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -32,7 +32,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btnProx"
+            android:id="@+id/btnEsqPass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -88,7 +88,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView12"
+                android:id="@+id/mCardViewPass"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="15dp"
@@ -122,7 +122,7 @@
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialCardView12">
+                app:layout_constraintTop_toBottomOf="@+id/mCardViewPass">
 
                 <EditText
                     android:id="@+id/editCNPJ"

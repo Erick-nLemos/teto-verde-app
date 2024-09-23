@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickComecar(View view){
-        tela = new Intent(getApplicationContext(), Cadastro.class);
+        tela = new Intent(getApplicationContext(), Login.class);
         startActivity(tela);
     }
 

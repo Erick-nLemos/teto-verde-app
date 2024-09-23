@@ -4,65 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/buttons"
     tools:context=".Login">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:src="@tools:sample/avatars"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/img_login" />
+
     <TextView
-        android:id="@+id/txtTetoVerde"
+        android:id="@+id/txtEntrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="arial"
-        android:text="Teto Verde"
-        android:textColor="@color/design_default_color_background"
-        android:textSize="32sp"
+        android:layout_marginTop="200dp"
+        android:text="Entrar"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtHort"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgComecar"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtHort"
-        android:layout_width="243dp"
-        android:layout_height="111dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="40dp"
-        android:text="Hortaliças Frescas para o seu Estabelecimento\n\n Faça o seu pedido e se torne um cliente vitalício "
-        android:textAlignment="center"
-        android:textColor="@color/design_default_color_background"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnComecar"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCardViewName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="70dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintBottom_toTopOf="@+id/btnAcessar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editNome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Senha:" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCardViewPass"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintBottom_toTopOf="@+id/mCardViewName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTetoVerde" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEntrar">
+
+        <EditText
+            android:id="@+id/editPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/entradaDados"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Nome:" />
+
+
+    </com.google.android.material.card.MaterialCardView>
 
     <Button
-        android:id="@+id/btnComecar"
-        android:layout_width="320dp"
-        android:layout_height="66dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/buttons"
+        android:id="@+id/btnAcessar"
+        android:layout_width="215dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="@color/lightBack"
         android:elevation="20dp"
-        android:onClick="clickComecar"
-        android:text="Começar"
+        android:onClick="clickAcessar"
+        android:text="Acessar"
         android:textSize="20sp"
         app:cornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgComecar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/lightBack"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/comecar_teto_verde" />
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/btnCadastro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:onClick="clickCadastrar"
+            android:paddingLeft="40dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/strSeCad"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnEsqPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:onClick="clickNewPass"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="10dp"
+            android:text="@string/strEsqPass"
+            android:textAlignment="textEnd"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

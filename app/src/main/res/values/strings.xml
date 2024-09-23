@@ -63,4 +63,6 @@
     <string name="strValorAlfaceL">1,49</string>
     <string name="strDescRepolhoVTitulo">Repolho Verde (600g)</string>
     <string name="strSalvarAlt">Salvar Alteração</string>
+    <string name="strEsqPass">Esqueci a Senha</string>
+    <string name="strSeCad">Cadastrar-se</string>
 </resources>

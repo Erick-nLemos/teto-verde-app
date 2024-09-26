@@ -301,6 +301,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/lightBack"
                 android:contentDescription="no"
+                android:onClick="clickCarrinho"
                 android:src="@drawable/carrinho_icon" />
 
             <ImageButton
@@ -310,6 +311,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="@color/lightBack"
                 android:contentDescription="no"
+                android:onClick="clickHome"
                 android:src="@drawable/home_icon" />
 
             <ImageButton

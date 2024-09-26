@@ -23,11 +23,11 @@ public class Login extends AppCompatActivity {
 
     public void clickAcessar(View view){
         setTheme(R.style.Base_Theme_TetoVerde);
-        tela = new Intent(getApplicationContext(), ProdutoRucula.class);
+        tela = new Intent(getApplicationContext(), Market.class);
         startActivity(tela);
     }
 
-    public void clickCadastro(View view){
+    public void clickCadastrar(View view){
         setTheme(R.style.Base_Theme_TetoVerde);
         tela = new Intent(getApplicationContext(), Cadastro.class);
         startActivity(tela);

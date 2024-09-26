@@ -32,15 +32,20 @@ public class ProdutoAlfaceC extends AppCompatActivity {
         txtQtd.setText(String.format("%d", qtd));
     }
 
-    /*
-    public void clickHome(View view){
+    public void clickCar(View view){
+        Intent tela = new Intent(getApplicationContext(), Carrinho.class);
+        startActivity(tela);
+    }
 
+    public void clickHome(View view){
+        Intent tela = new Intent(getApplicationContext(), Market.class);
+        startActivity(tela);
     }
 
     public void clickCarrinho(View view){
-
+        Intent tela = new Intent(getApplicationContext(), Carrinho.class);
+        startActivity(tela);
     }
-    */
 
     public void clickPerfil(View view){
         Intent tela = new Intent(getApplicationContext(), Perfil.class);

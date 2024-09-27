@@ -12,12 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="15dp"
-        android:src="@tools:sample/avatars"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/img_login" />
+        app:srcCompat="@drawable/img_login" />
 
     <TextView
         android:id="@+id/txtEntrar"
@@ -37,12 +36,14 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="70dp"
         app:cardBackgroundColor="@color/entradaDados"
         app:layout_constraintBottom_toTopOf="@+id/btnAcessar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCardViewPass">
 
         <EditText
             android:id="@+id/editNome"
@@ -64,9 +65,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="10dp"
         app:cardBackgroundColor="@color/entradaDados"
-        app:layout_constraintBottom_toTopOf="@+id/mCardViewName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEntrar">

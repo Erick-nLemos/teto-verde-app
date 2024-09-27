@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinalizaCompra2">
+
+    <ImageView
+        android:id="@+id/imageViewRuc"
+        android:layout_width="350dp"
+        android:layout_height="343dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginBottom="520dp"
+        android:adjustViewBounds="false"
+        android:rotation="-80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_cad" />
+
+    <TextView
+        android:id="@+id/txtAdicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="30dp"
+        android:text="Comprar"
+        android:textColor="@color/buttons"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDiv"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/entradaDados"
+        android:textColor="@color/entradaDados"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="200dp"
+        app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Compra Finalizada!"
+                android:textColor="@color/ic_launcher_background"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/MCardViewNav"
+
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/lightBack"
+        android:backgroundTint="@color/lightBack"
+        app:cardBackgroundColor="@color/lightBack"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightBack"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnNavCarrinho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickCarrinho"
+                android:src="@drawable/carrinho_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickHome"
+                android:src="@drawable/home_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickPerfil"
+                android:src="@drawable/user_icon" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

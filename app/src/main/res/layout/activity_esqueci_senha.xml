@@ -136,12 +136,11 @@
         app:layout_constraintStart_toStartOf="parent" >
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imgNewPass"
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars"
-            tools:srcCompat="@drawable/img_esqueci_pass" />
+            app:srcCompat="@drawable/img_esqueci_pass" />
 
         <Button
             android:id="@+id/btnCadastro"

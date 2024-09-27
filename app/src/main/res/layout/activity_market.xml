@@ -17,6 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="297dp"
+            android:layout_height="274dp"
+            android:layout_marginBottom="550dp"
+            android:rotation="-80"
+            android:src="@tools:sample/avatars"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img_cad" />
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/mCardViewAlfC"
             android:layout_width="174dp"
@@ -38,11 +49,12 @@
                     android:layout_width="116dp"
                     android:layout_height="123dp"
                     android:layout_marginTop="10dp"
-                    android:src="@tools:sample/avatars"
+                    android:onClick="clickDescAlfC"
+                    android:contentDescription="no"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/alface_crespa" />
+                    app:srcCompat="@drawable/alface_crespa" />
 
                 <TextView
                     android:id="@+id/txtAlfC"
@@ -136,11 +148,12 @@
                     android:layout_width="116dp"
                     android:layout_height="123dp"
                     android:layout_marginTop="10dp"
-                    android:src="@tools:sample/avatars"
+                    android:onClick="clickDescRepV"
+                    android:contentDescription="no"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/rucula" />
+                    app:srcCompat="@drawable/repolho_verde" />
 
                 <TextView
                     android:id="@+id/txtRepV"
@@ -246,15 +259,16 @@
             tools:layout_editor_absoluteY="213dp">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageViewRuc"
                 android:layout_width="116dp"
                 android:layout_height="123dp"
                 android:layout_marginTop="10dp"
-                android:src="@tools:sample/avatars"
+                android:onClick="clickDescRuc"
+                android:contentDescription="no"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/rucula" />
+                app:srcCompat="@drawable/rucula" />
 
             <TextView
                 android:id="@+id/txtRuc"
@@ -263,7 +277,7 @@
                 android:text="@string/strDescRuculaTitulo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageViewRuc" />
 
             <TextView
                 android:id="@+id/txtValRuc"
@@ -344,15 +358,16 @@
             tools:layout_editor_absoluteY="213dp">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imgViewAlfL"
                 android:layout_width="116dp"
                 android:layout_height="123dp"
                 android:layout_marginTop="10dp"
-                android:src="@tools:sample/avatars"
+                android:onClick="clickDescAlfL"
+                android:contentDescription="no"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/alface_lisa" />
+                app:srcCompat="@drawable/alface_lisa" />
 
             <TextView
                 android:id="@+id/txtAlfL"
@@ -361,7 +376,7 @@
                 android:text="@string/strDescAlfaceLTitulo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imgViewAlfL" />
 
             <TextView
                 android:id="@+id/textView3"

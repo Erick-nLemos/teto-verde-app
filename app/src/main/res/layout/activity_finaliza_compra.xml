@@ -6,30 +6,237 @@
     android:layout_height="match_parent"
     tools:context=".FinalizaCompra">
 
+    <ImageView
+        android:id="@+id/imageViewRuc"
+        android:layout_width="350dp"
+        android:layout_height="343dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginBottom="520dp"
+        android:adjustViewBounds="false"
+        android:rotation="-80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_cad" />
+
+    <TextView
+        android:id="@+id/txtAdicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="30dp"
+        android:text="Comprar"
+        android:textColor="@color/buttons"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDiv"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="200dp"
+        android:background="@color/entradaDados"
+        android:textColor="@color/entradaDados"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtcartaocredito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="15dp"
+        android:text="Cartão de Crédito"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtDiv"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/MCardViewNav"
 
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/lightBack"
         android:backgroundTint="@color/lightBack"
         app:cardBackgroundColor="@color/lightBack"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/lightBack"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnNavCarrinho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickCarrinho"
+                android:src="@drawable/carrinho_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickHome"
+                android:src="@drawable/home_icon" />
+
+            <ImageButton
+                android:id="@+id/btnNavPerfil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickPerfil"
+                android:src="@drawable/user_icon" />
+        </LinearLayout>
+
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView22"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <EditText
+            android:id="@+id/editCNPJ"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="CPF/CNPJ do Titular"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="200dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <EditText
+            android:id="@+id/editValiCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Validade"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <EditText
+            android:id="@+id/editNumCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Número do Cartão"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView12"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <EditText
+            android:id="@+id/editNameCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="Nome do Titular"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="@color/entradaDados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDiv">
+
+        <EditText
+            android:id="@+id/editCvvCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4D6F3F"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="15dp"
+            android:text="CVV"
+            android:textColor="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:backgroundTint="@color/buttons"
+        android:onClick="clickFimComp"
+        android:text="Finalizar Compra"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView22" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

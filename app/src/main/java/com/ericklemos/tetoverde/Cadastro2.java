@@ -16,7 +16,7 @@ public class Cadastro2 extends AppCompatActivity {
     }
     
     public void clickSalvar(View view){
-        Intent tela = new Intent(getApplicationContext(), ProdutoRucula.class);
+        Intent tela = new Intent(getApplicationContext(), Market.class);
         startActivity(tela);
     }
 

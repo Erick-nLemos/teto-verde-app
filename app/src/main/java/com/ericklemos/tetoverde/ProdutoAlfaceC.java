@@ -23,6 +23,7 @@ public class ProdutoAlfaceC extends AppCompatActivity {
     public void clickSomar(View view){
         qtd = Integer.parseInt(txtQtd.getText().toString());
         qtd++;
+
         txtQtd.setText(String.format("%d", qtd));
     }
 

@@ -32,18 +32,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mCardViewName"
+        android:id="@+id/mCardViewPass"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
         app:cardBackgroundColor="@color/entradaDados"
-        app:layout_constraintBottom_toTopOf="@+id/btnAcessar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mCardViewPass">
+        app:layout_constraintTop_toBottomOf="@+id/mCardViewNome">
 
         <EditText
             android:id="@+id/editNome"
@@ -59,12 +57,12 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mCardViewPass"
+        android:id="@+id/mCardViewNome"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
         app:cardBackgroundColor="@color/entradaDados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,9 +85,6 @@
         android:id="@+id/btnAcessar"
         android:layout_width="215dp"
         android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="120dp"
         android:backgroundTint="@color/lightBack"
         android:elevation="20dp"
         android:onClick="clickAcessar"
@@ -99,7 +94,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCardViewNome" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

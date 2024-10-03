@@ -58,7 +58,7 @@
                 app:srcCompat="@drawable/img_cad" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/mCardViewPass"
+                android:id="@+id/mCardViewNome"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"
@@ -90,7 +90,7 @@
                 app:cardBackgroundColor="@color/entradaDados"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mCardViewPass">
+                app:layout_constraintTop_toBottomOf="@+id/mCardViewNome">
 
                 <EditText
                     android:id="@+id/editPass"

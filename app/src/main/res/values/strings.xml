@@ -65,4 +65,5 @@
     <string name="strSalvarAlt">Salvar Alteração</string>
     <string name="strEsqPass">Esqueci a Senha</string>
     <string name="strSeCad">Cadastrar-se</string>
+    <string name="strCarrrinhoTitutlo">Carrinho</string>
 </resources>

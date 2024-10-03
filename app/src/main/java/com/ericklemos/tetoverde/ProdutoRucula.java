@@ -17,7 +17,7 @@ public class ProdutoRucula extends AppCompatActivity {
         setContentView(R.layout.activity_produtorucula);
 
 
-        txtQtd = findViewById(R.id.txtQtd);
+        txtQtd = findViewById(R.id.txtQtdAlfC);
     }
 
     public void clickSomar(View view){

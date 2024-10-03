@@ -17,7 +17,7 @@ public class ProdutoAlfaceLisa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produtoalfacelisa);
 
-        txtQtd = findViewById(R.id.txtQtd);
+        txtQtd = findViewById(R.id.txtQtdAlfC);
     }
 
     public void clickSomar(View view){

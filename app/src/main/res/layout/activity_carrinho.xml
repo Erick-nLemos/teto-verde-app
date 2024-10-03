@@ -88,7 +88,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txtSubtrair1"
+                        android:id="@+id/txtSubtrair3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -99,7 +99,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtQtd"
+                        android:id="@+id/txtQtdAlfC"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -109,7 +109,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtSomar"
+                        android:id="@+id/txtSomar3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -297,7 +297,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txtSubtrair3"
+                        android:id="@+id/txtSubtrair1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -308,7 +308,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtQtdAlfC"
+                        android:id="@+id/txtQtdRuc"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -318,7 +318,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtSomar3"
+                        android:id="@+id/txtSomar1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -411,7 +411,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtQtd4"
+                        android:id="@+id/txtQtdRepV"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

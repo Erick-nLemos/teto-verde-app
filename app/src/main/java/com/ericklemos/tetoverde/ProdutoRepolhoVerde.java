@@ -17,7 +17,7 @@ public class ProdutoRepolhoVerde extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produtorepolhoverde);
 
-        txtQtd = findViewById(R.id.txtQtd);
+        txtQtd = findViewById(R.id.txtQtdAlfC);
     }
 
     public void clickSomar(View view){

@@ -130,9 +130,8 @@
             android:id="@+id/mCardViewRepV"
             android:layout_width="174dp"
             android:layout_height="236dp"
-            android:layout_marginBottom="90dp"
+            android:layout_marginTop="30dp"
             app:cardCornerRadius="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/mCardViewAlfC">
@@ -196,13 +195,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:onClick="clickSub"
+                            android:onClick="clickSub4"
                             android:text="@string/strSubtrair"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/txtQtd4"
+                            android:id="@+id/txtQtdRepV"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -217,7 +216,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:onClick="clickSomar"
+                            android:onClick="clickSomar4"
                             android:text="@string/strSomar"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -345,8 +344,8 @@
         android:id="@+id/mCardViewAlfL"
         android:layout_width="174dp"
         android:layout_height="236dp"
+        android:layout_marginTop="30dp"
         app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mCardViewRuc">
@@ -447,14 +446,14 @@
         android:layout_height="70dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="20dp"
         android:background="@color/lightBack"
         android:backgroundTint="@color/lightBack"
         app:cardBackgroundColor="@color/lightBack"
         app:cardCornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCardViewAlfL">
 
 
         <LinearLayout

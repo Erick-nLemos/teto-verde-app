@@ -6,28 +6,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import com.ericklemos.tetoverde.controllers.QtdPrdt;
 
 public class Carrinho extends AppCompatActivity {
+
+    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV;
+    int qtdAlfL, qtdAlfC, qtdRepV, qtd;
+    QtdPrdt qtdRuc = new QtdPrdt();
+    QtdPrdt qtd02 = new QtdPrdt();
+    QtdPrdt qtd03 = new QtdPrdt();
+    QtdPrdt qtd04 = new QtdPrdt();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carrinho);
+
+        txtQtdRuc = findViewById(R.id.txtQtdRuc);
+        txtQtdAlfL = findViewById(R.id.txtQtdAlfL);
+        txtQtdAlfC = findViewById(R.id.txtQtdAlfC);
+        txtQtdRepV = findViewById(R.id.txtQtdRepV);
     }
 
-    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV;
-    int qtdRuc, qtdAlfL, qtdAlfC, qtdRepV;
-    public void clickSomar1(View view){
-        qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        qtdRuc++;
 
-        txtQtdRuc.setText(String.format("%d", qtdRuc));
+    public void clickSomar1(View view){
+        qtd = Integer.parseInt(txtQtdRuc.getText().toString());
+        qtdRuc.somarQtd(qtd);
+        txtQtdRuc.setText(String.format("%d", qtdRuc.getQtdPrdt()));
     }
 
     public void clickSub1(View view){
-        qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        qtdRuc--;
-        txtQtdRuc.setText(String.format("%d", qtdRuc));
+        qtd = Integer.parseInt(txtQtdRuc.getText().toString());
+        qtdRuc.subtrairQtd(qtd);
+        txtQtdRuc.setText(String.format("%d", qtdRuc.getQtdPrdt()));
     }
 
     public void clickSomar2(View view){

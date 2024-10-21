@@ -7,69 +7,74 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.ericklemos.tetoverde.controllers.QtdPrdt;
+
 public class Market extends AppCompatActivity {
+
+    QtdPrdt calcQtd = QtdPrdt.getInstance();
+    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-    }
-    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV;
-    int qtdRuc, qtdAlfL, qtdAlfC, qtdRepV;
-    public void clickSomar1(View view){
-        qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        qtdRuc++;
 
-        txtQtdRuc.setText(String.format("%d", qtdRuc));
+        txtQtdRuc = findViewById(R.id.txtQtdRuc);
+        txtQtdAlfL = findViewById(R.id.txtQtdAlfL);
+        txtQtdAlfC = findViewById(R.id.txtQtdAlfC);
+        txtQtdRepV = findViewById(R.id.txtQtdRepV);
+    }
+
+
+    public void clickSomar1(View view){
+        calcQtd.qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
+        calcQtd.qtdRuc++;
+        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
     }
 
     public void clickSub1(View view){
-        qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        qtdRuc--;
-        txtQtdRuc.setText(String.format("%d", qtdRuc));
+        calcQtd.qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
+        calcQtd.qtdRuc--;
+        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
     }
 
     public void clickSomar2(View view){
-        qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
-        qtdAlfL++;
-
-        txtQtdAlfL.setText(String.format("%d", qtdAlfL));
+        calcQtd.qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
+        calcQtd.qtdAlfL++;
+        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
     }
 
     public void clickSub2(View view){
-        qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
-        qtdAlfL--;
-        txtQtdAlfL.setText(String.format("%d", qtdAlfL));
+        calcQtd.qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
+        calcQtd.qtdAlfL--;
+        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
     }
 
     public void clickSomar3(View view){
-        qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
-        qtdAlfC++;
-
-        txtQtdAlfC.setText(String.format("%d", qtdAlfC));
+        calcQtd.qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
+        calcQtd.qtdAlfC++;
+        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
     }
 
     public void clickSub3(View view){
-        qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
-        qtdAlfC--;
-        txtQtdAlfC.setText(String.format("%d", qtdAlfC));
+        calcQtd.qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
+        calcQtd.qtdAlfC--;
+        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
     }
 
     public void clickSomar4(View view){
-        qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
-        qtdRepV++;
-
-        txtQtdRuc.setText(String.format("%d", qtdRepV));
+        calcQtd.qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
+        calcQtd.qtdRepV++;
+        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
     }
 
     public void clickSub4(View view){
-        qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
-        qtdRepV--;
-        txtQtdRepV.setText(String.format("%d", qtdRepV));
+        calcQtd.qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
+        calcQtd.qtdRepV--;
+        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
     }
 
-
-
+    // chamando tela de descricao do prodt
     public void clickDescRuc(View view){
         Intent tela = new Intent(getApplicationContext(), ProdutoRucula.class);
         startActivity(tela);
@@ -90,6 +95,7 @@ public class Market extends AppCompatActivity {
         startActivity(tela);
     }
 
+    // nav
     public void clickHome(View view){
         finish();
         Intent tela = new Intent(getApplicationContext(), Market.class);

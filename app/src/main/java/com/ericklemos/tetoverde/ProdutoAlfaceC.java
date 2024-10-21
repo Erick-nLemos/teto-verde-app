@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.ericklemos.tetoverde.controllers.QtdPrdt;
+
 public class ProdutoAlfaceC extends AppCompatActivity {
 
+    QtdPrdt calcQtd = QtdPrdt.getInstance();
     TextView txtQtd;
     int qtd;
 
@@ -17,22 +20,25 @@ public class ProdutoAlfaceC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produtoalfacec);
 
+
         txtQtd = findViewById(R.id.txtQtdAlfC);
+        txtQtd.setText(String.format("%d", calcQtd.qtdAlfC));
     }
 
     public void clickSomar(View view){
-        qtd = Integer.parseInt(txtQtd.getText().toString());
-        qtd++;
-
-        txtQtd.setText(String.format("%d", qtd));
+        calcQtd.qtdAlfC = Integer.parseInt(txtQtd.getText().toString());
+        calcQtd.qtdAlfC++;
+        txtQtd.setText(String.format("%d", calcQtd.qtdAlfC));
     }
 
     public void clickSub(View view){
-        qtd = Integer.parseInt(txtQtd.getText().toString());
-        qtd--;
-        txtQtd.setText(String.format("%d", qtd));
+        calcQtd.qtdAlfC = Integer.parseInt(txtQtd.getText().toString());
+        calcQtd.qtdAlfC--;
+        txtQtd.setText(String.format("%d", calcQtd.qtdAlfC));
     }
 
+
+    // nav
     public void clickCar(View view){
         Intent tela = new Intent(getApplicationContext(), Carrinho.class);
         startActivity(tela);

@@ -93,7 +93,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSub"
+                        android:onClick="clickSub3"
                         android:text="@string/strSubtrair"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -114,7 +114,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSomar"
+                        android:onClick="clickSomar3"
                         android:text="@string/strSomar"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -199,7 +199,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSub"
+                        android:onClick="clickSub2"
                         android:text="@string/strSubtrair"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -220,7 +220,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSomar"
+                        android:onClick="clickSomar2"
                         android:text="@string/strSomar"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -302,7 +302,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSub"
+                        android:onClick="clickSub1"
                         android:text="@string/strSubtrair"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -323,7 +323,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSomar"
+                        android:onClick="clickSomar1"
                         android:text="@string/strSomar"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -405,7 +405,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSub"
+                        android:onClick="clickSub4"
                         android:text="@string/strSubtrair"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -426,7 +426,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:onClick="clickSomar"
+                        android:onClick="clickSomar4"
                         android:text="@string/strSomar"
                         android:textSize="16sp"
                         android:textStyle="bold" />

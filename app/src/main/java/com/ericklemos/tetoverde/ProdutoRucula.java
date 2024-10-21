@@ -6,30 +6,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.ericklemos.tetoverde.controllers.QtdPrdt;
+
 public class ProdutoRucula extends AppCompatActivity {
 
+    QtdPrdt calcQtd = QtdPrdt.getInstance();
     TextView txtQtd;
-    int qtd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produtorucula);
 
-
-        txtQtd = findViewById(R.id.txtQtdAlfC);
+        txtQtd = findViewById(R.id.txtQtdRuc);
+        txtQtd.setText(String.format("%d", calcQtd.qtdRuc));
     }
 
     public void clickSomar(View view){
-        qtd = Integer.parseInt(txtQtd.getText().toString());
-        qtd++;
-        txtQtd.setText(String.format("%d", qtd));
+        calcQtd.qtdRuc = Integer.parseInt(txtQtd.getText().toString());
+        calcQtd.qtdRuc++;
+        txtQtd.setText(String.format("%d", calcQtd.qtdRuc));
     }
 
     public void clickSub(View view){
-        qtd = Integer.parseInt(txtQtd.getText().toString());
-        qtd--;
-        txtQtd.setText(String.format("%d", qtd));
+        calcQtd.qtdRuc = Integer.parseInt(txtQtd.getText().toString());
+        calcQtd.qtdRuc--;
+        txtQtd.setText(String.format("%d", calcQtd.qtdRuc));
     }
 
     public void clickCar(View view){
@@ -51,7 +53,4 @@ public class ProdutoRucula extends AppCompatActivity {
         Intent tela = new Intent(getApplicationContext(), Perfil.class);
         startActivity(tela);
     }
-
-
-
 }

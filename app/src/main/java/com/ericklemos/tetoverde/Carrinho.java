@@ -29,7 +29,6 @@ public class Carrinho extends AppCompatActivity {
         txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
     }
 
-
     public void clickSomar1(View view){
         calcQtd.qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
         calcQtd.qtdRuc++;
@@ -99,6 +98,4 @@ public class Carrinho extends AppCompatActivity {
         Intent tela = new Intent(getApplicationContext(), Perfil.class);
         startActivity(tela);
     }
-
-
 }

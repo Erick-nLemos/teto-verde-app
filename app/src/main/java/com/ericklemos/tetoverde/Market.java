@@ -23,6 +23,11 @@ public class Market extends AppCompatActivity {
         txtQtdAlfL = findViewById(R.id.txtQtdAlfL);
         txtQtdAlfC = findViewById(R.id.txtQtdAlfC);
         txtQtdRepV = findViewById(R.id.txtQtdRepV);
+
+        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
+        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
+        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
+        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
     }
 
 

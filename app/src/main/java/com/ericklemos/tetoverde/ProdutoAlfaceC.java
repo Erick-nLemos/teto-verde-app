@@ -13,7 +13,6 @@ public class ProdutoAlfaceC extends AppCompatActivity {
 
     QtdPrdt calcQtd = QtdPrdt.getInstance();
     TextView txtQtd;
-    int qtd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

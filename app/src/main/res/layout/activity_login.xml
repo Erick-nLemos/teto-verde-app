@@ -109,13 +109,13 @@
 
         <Button
             android:id="@+id/btnCadastro"
-            android:layout_width="0dp"
+            android:layout_width="10dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginRight="0dp"
             android:layout_weight="1"
             android:onClick="clickCadastrar"
-            android:paddingLeft="40dp"
+            android:paddingLeft="30dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="@string/strSeCad"
@@ -124,7 +124,7 @@
 
         <Button
             android:id="@+id/btnEsqPass"
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="10dp"
@@ -134,7 +134,7 @@
             android:paddingRight="50dp"
             android:paddingBottom="10dp"
             android:text="@string/strEsqPass"
-            android:textAlignment="textEnd"
+            android:textAlignment="textStart"
             android:textSize="18sp" />
     </LinearLayout>
 

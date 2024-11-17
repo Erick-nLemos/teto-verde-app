@@ -48,7 +48,7 @@ public class FinalizaCompra2 extends AppCompatActivity {
         valTotal = (calcQtd.qtdAlfL*1.49) + (calcQtd.qtdRepV*4.99) + (calcQtd.qtdAlfC*1.99) + (calcQtd.qtdRuc*4.99);
 
         String valTotalFormatado = String.format("%.2f", valTotal);
-        textView.setText(valTotalFormatado);
+        textView.setText("R$ "+ valTotalFormatado);
     }
 
     public void clickHome(View view){

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.ericklemos.tetoverde.Services.ApiService;
+import com.ericklemos.tetoverde.controllers.UserSession;
 import com.ericklemos.tetoverde.dtos.ClienteDto;
 
 import java.util.concurrent.Executor;
@@ -16,6 +17,7 @@ import java.util.concurrent.Executors;
 
 public class Perfil extends AppCompatActivity {
 
+    private UserSession session = UserSession.getInstance();
     private ApiService apiService = new ApiService();
     private ClienteDto clienteDto;
     private EditText txtNome, txtEmail, txtCnpj, txtTelefone, txtCep, txtLogradouro, txtNumero, txtBairro, txtCidade, txtUf;
@@ -39,8 +41,17 @@ public class Perfil extends AppCompatActivity {
 
         executorService = Executors.newSingleThreadExecutor();
 
-        clienteDto = apiService.getCliente(2);
+        clienteDto = apiService.getCliente(session.getUserId());
         txtNome.setText(clienteDto.getFantasia());
+        txtEmail.setText(clienteDto.getEmail());
+        txtCnpj.setText(clienteDto.getCnpj());
+        txtTelefone.setText(clienteDto.getTelefone());
+        txtCep.setText(clienteDto.getCep());
+        txtLogradouro.setText(clienteDto.getRua());
+        txtNumero.setText(clienteDto.getNumero());
+        txtBairro.setText(clienteDto.getBairro());
+        txtCidade.setText(clienteDto.getCidade());
+        txtUf.setText(clienteDto.getUf());
     }
 
     public void clickHome(View view){

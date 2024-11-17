@@ -7,7 +7,7 @@ import android.widget.TextView;
 public class QtdPrdt {
 
     private static QtdPrdt instance;
-     public int qtdAlfL, qtdAlfC, qtdRepV, qtdRuc;
+    public int qtdAlfL, qtdAlfC, qtdRepV, qtdRuc;
 
 
 

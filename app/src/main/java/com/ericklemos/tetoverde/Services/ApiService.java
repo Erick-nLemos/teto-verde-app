@@ -19,7 +19,7 @@ public class ApiService {
             IgnoreSSL.ignorarCertificadosSSL();
             ClienteDto cliente = null;
 
-            URL url = new URL("https://localhost:7144/api/Cliente/ListarClientes/" + id);
+            URL url = new URL("https://192.168.43.98:7144/api/Cliente/ListarClientes/" + id);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(20000);

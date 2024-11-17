@@ -54,12 +54,14 @@ public class Login extends AppCompatActivity {
         if(login.isStatus()) {
             session.setUserName(login.getDados().getFantasia());
             session.setUserId(login.getDados().getIdCodCliente());
+            Toast toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);
+            toast.show();
             setTheme(R.style.Base_Theme_TetoVerde);
             tela = new Intent(getApplicationContext(), Market.class);
             startActivity(tela);
         }
         else{
-            Toast toast = Toast.makeText(Login.this, "Usuario ou Senha Inválidos!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);
             toast.show();
         }
     }

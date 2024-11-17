@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.ericklemos.tetoverde.controllers.QtdPrdt;
+import com.ericklemos.tetoverde.controllers.UserSession;
 
 public class Market extends AppCompatActivity {
 
+    UserSession session = UserSession.getInstance();
     QtdPrdt calcQtd = QtdPrdt.getInstance();
-    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV;
+    TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV, txtMarketTitulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,13 @@ public class Market extends AppCompatActivity {
         txtQtdAlfL = findViewById(R.id.txtQtdAlfL);
         txtQtdAlfC = findViewById(R.id.txtQtdAlfC);
         txtQtdRepV = findViewById(R.id.txtQtdRepV);
+        txtMarketTitulo = findViewById(R.id.txtMarketTitulo);
 
         txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
         txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
         txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
         txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
+        txtMarketTitulo.setText("Olá, "+ session.getUserName());
     }
 
 

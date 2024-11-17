@@ -43,31 +43,95 @@
 
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:cardCornerRadius="200dp"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        app:cardCornerRadius="50dp"
         app:layout_constraintBottom_toTopOf="@+id/MCardViewNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDiv">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#4D6F3F"
-            android:orientation="horizontal">
+            android:background="@color/buttons">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/txtFinalizaTitulo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Compra Finalizada!"
-                android:textColor="@color/ic_launcher_background"
+                android:padding="5dp"
+                android:text="Compra Finaliza!"
+                android:textColor="@color/design_default_color_background"
                 android:textSize="28sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblComprador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="50dp"
+                android:text="Comprador: "
+                android:textColor="@color/design_default_color_background"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtFinalizaTitulo" />
+
+            <TextView
+                android:id="@+id/txtNF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_background"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/lblValorTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblComprador" />
+
+            <TextView
+                android:id="@+id/txtNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="TextView"
+                android:textColor="@color/design_default_color_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lblComprador"
+                app:layout_constraintTop_toBottomOf="@+id/txtFinalizaTitulo" />
+
+            <TextView
+                android:id="@+id/lblValorTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center"
+                android:text="Valor Total: "
+                android:textColor="@color/design_default_color_background"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txtValorTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:layout_marginBottom="15dp"
+                android:text="R$ 100,00"
+                android:textColor="@color/design_default_color_background"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView

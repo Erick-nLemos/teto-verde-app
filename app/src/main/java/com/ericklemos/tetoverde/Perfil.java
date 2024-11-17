@@ -42,6 +42,8 @@ public class Perfil extends AppCompatActivity {
         executorService = Executors.newSingleThreadExecutor();
 
         clienteDto = apiService.getCliente(session.getUserId());
+        session.setUserName(clienteDto.getFantasia());
+
         txtNome.setText(clienteDto.getFantasia());
         txtEmail.setText(clienteDto.getEmail());
         txtCnpj.setText(clienteDto.getCnpj());

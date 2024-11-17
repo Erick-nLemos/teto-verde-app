@@ -44,13 +44,14 @@
         app:layout_constraintTop_toBottomOf="@+id/mCardViewNome">
 
         <EditText
-            android:id="@+id/editNome"
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/entradaDados"
             android:ems="10"
             android:inputType="text"
             android:paddingLeft="15dp"
+            android:password="true"
             android:text="Senha:" />
 
 
@@ -69,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEntrar">
 
         <EditText
-            android:id="@+id/editPass"
+            android:id="@+id/editNome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/entradaDados"

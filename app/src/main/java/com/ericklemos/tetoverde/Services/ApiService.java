@@ -4,13 +4,18 @@ import android.util.Log;
 
 import com.ericklemos.tetoverde.configSSL.IgnoreSSL;
 import com.ericklemos.tetoverde.dtos.ClienteDto;
+import com.ericklemos.tetoverde.dtos.LoginClienteDto;
 import com.ericklemos.tetoverde.dtos.RespostaApiDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import retrofit2.http.POST;
 
 public class ApiService {
 
@@ -49,6 +54,54 @@ public class ApiService {
             Log.e("ApiService", "Erro ao consumir a API: "+ e.getMessage(), e);
             return null;
         }
+    }
+
+    public RespostaApiDto loginValid(LoginClienteDto loginClienteDto){
+        HttpURLConnection connection = null;
+        try{
+            IgnoreSSL.ignorarCertificadosSSL();
+
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(loginClienteDto);
+            RespostaApiDto resposta = null;
+
+            URL url = new URL("https://192.168.43.98:7144/api/Cliente/Login");
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("COntent-Type", "application/json");
+            connection.setDoOutput(true);
+            connection.setConnectTimeout(20000);
+            connection.setReadTimeout(20000);
+
+            try(BufferedOutputStream outputStream = new BufferedOutputStream(connection.getOutputStream())){
+                outputStream.write(json.getBytes());
+                outputStream.flush();
+            }
+
+            int responseCod = connection.getResponseCode();
+            if(responseCod == HttpURLConnection.HTTP_OK){
+                try(BufferedReader leitor = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while((line = leitor.readLine()) != null){
+                        response.append(line);
+                    }
+                    resposta = mapper.readValue(response.toString(), RespostaApiDto.class);
+                    connection.disconnect();
+                    return resposta;
+                }
+            }else{
+                Log.e("ApiService", "Erro na API: Código de resposta " + responseCod);
+            }
+        }catch (Exception e){
+            Log.e("ApiService", "Erro ao consumir a API: "+ e.getMessage(), e);
+            return null;
+        }finally {
+            if(connection != null){
+                connection.disconnect();
+            }
+        }
+        return null;
     }
 
 }

@@ -55,7 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtPerfilTitulo">
 
                 <EditText
-                    android:id="@+id/editTextText18"
+                    android:id="@+id/editTxtNome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -78,7 +78,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView2">
 
                 <EditText
-                    android:id="@+id/editTextText19"
+                    android:id="@+id/editTxtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -101,7 +101,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView3">
 
                 <EditText
-                    android:id="@+id/editTextText20"
+                    android:id="@+id/editTxtCnpj"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -124,7 +124,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView4">
 
                 <EditText
-                    android:id="@+id/editTextText21"
+                    android:id="@+id/editTxtTel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -147,7 +147,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView5">
 
                 <EditText
-                    android:id="@+id/editTextText22"
+                    android:id="@+id/editTxtCep"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -170,7 +170,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView6">
 
                 <EditText
-                    android:id="@+id/editTextText23"
+                    android:id="@+id/editTxtRua"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -191,7 +191,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView7">
 
                 <EditText
-                    android:id="@+id/editTextText24"
+                    android:id="@+id/editTxtBairro"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -212,7 +212,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView8">
 
                 <EditText
-                    android:id="@+id/editTextText25"
+                    android:id="@+id/editTxtCidade"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -235,7 +235,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView7">
 
                 <EditText
-                    android:id="@+id/editTextText26"
+                    android:id="@+id/editTxtNum"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
@@ -258,7 +258,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/materialCardView10">
 
                 <EditText
-                    android:id="@+id/editTextText27"
+                    android:id="@+id/editTxtUf"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"

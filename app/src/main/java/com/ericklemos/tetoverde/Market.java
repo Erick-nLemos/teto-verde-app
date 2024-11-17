@@ -100,7 +100,7 @@ public class Market extends AppCompatActivity {
         startActivity(tela);
     }
 
-    // nav
+    // nav ========================================
     public void clickHome(View view){
         finish();
         Intent tela = new Intent(getApplicationContext(), Market.class);

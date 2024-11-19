@@ -1,6 +1,8 @@
 package com.ericklemos.tetoverde;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +14,9 @@ import com.ericklemos.tetoverde.controllers.UserSession;
 import com.ericklemos.tetoverde.dtos.LoginClienteDto;
 import com.ericklemos.tetoverde.dtos.RespostaApiDto;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Login extends AppCompatActivity {
 
     Intent tela;
@@ -19,6 +24,9 @@ public class Login extends AppCompatActivity {
     private EditText nomeEdit, passwordEdit;
     private LoginClienteDto loginDto = new LoginClienteDto();
     private ApiService apiService = new ApiService();
+    private ExecutorService executorService;
+    Toast toast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,10 +36,11 @@ public class Login extends AppCompatActivity {
         nomeEdit = findViewById(R.id.editNome);
         passwordEdit = findViewById(R.id.editPassword);
 
-
+        executorService = Executors.newSingleThreadExecutor();
     }
 
     public void clickNewPass(View view){
+        finish();
         setTheme(R.style.Base_Theme_TetoVerde);
         tela = new Intent(getApplicationContext(), EsqueciSenha.class);
         startActivity(tela);
@@ -49,26 +58,61 @@ public class Login extends AppCompatActivity {
         }
         loginDto.setName(nomeEdit.getText().toString());
         loginDto.setSenha(passwordEdit.getText().toString());
-        RespostaApiDto login = apiService.loginValid(loginDto);
 
-        if(login.isStatus()) {
-            session.setUserName(login.getDados().getFantasia());
-            session.setUserId(login.getDados().getIdCodCliente());
-            Toast toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);
-            toast.show();
-            setTheme(R.style.Base_Theme_TetoVerde);
-            tela = new Intent(getApplicationContext(), Market.class);
-            startActivity(tela);
-        }
-        else{
-            Toast toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);
-            toast.show();
-        }
+
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    final RespostaApiDto login = apiService.loginValid(loginDto);
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (login != null && login.isStatus()) {
+                                session.setUserName(login.getDados().getFantasia());
+                                session.setUserId(login.getDados().getIdCodCliente());
+                                toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);
+                                toast.show();
+
+                                finish();
+                                setTheme(R.style.Base_Theme_TetoVerde);
+                                tela = new Intent(getApplicationContext(), Market.class);
+                                startActivity(tela);
+                            } else {
+                                String mensagem = login != null ? login.getMensagem() : "Erro no login!";
+                                toast = Toast.makeText(Login.this, mensagem, Toast.LENGTH_SHORT);
+                                toast.show();
+                            }
+                        }
+                    });
+                }catch(Exception e){
+                    Log.e("Login", "Erro ao solicitar login: "+ e.getMessage(), e);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            toast = Toast.makeText(Login.this, "Erro inesperado. Tente novamente.", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
+                }
+            }
+        });
+
     }
 
     public void clickCadastrar(View view){
+        finish();
         setTheme(R.style.Base_Theme_TetoVerde);
         tela = new Intent(getApplicationContext(), Cadastro.class);
         startActivity(tela);
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(executorService != null && !executorService.isShutdown()){
+            executorService.shutdown();
+        }
     }
 }

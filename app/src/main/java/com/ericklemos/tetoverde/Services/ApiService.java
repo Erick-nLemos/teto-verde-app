@@ -20,12 +20,13 @@ import retrofit2.http.POST;
 public class ApiService {
 
     public ClienteDto getCliente(int id){
+        HttpURLConnection connection = null;
         try{
             IgnoreSSL.ignorarCertificadosSSL();
             ClienteDto cliente = null;
 
-            URL url = new URL("https://192.168.43.98:7144/api/Cliente/ListarClientes/" + id);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/ListarClientes/" + id);
+            connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(20000);
             connection.setReadTimeout(20000);
@@ -54,6 +55,11 @@ public class ApiService {
             Log.e("ApiService", "Erro ao consumir a API: "+ e.getMessage(), e);
             return null;
         }
+        finally {
+            if(connection != null){
+                connection.disconnect();
+            }
+        }
     }
 
     public RespostaApiDto loginValid(LoginClienteDto loginClienteDto){
@@ -65,10 +71,10 @@ public class ApiService {
             String json = mapper.writeValueAsString(loginClienteDto);
             RespostaApiDto resposta = null;
 
-            URL url = new URL("https://192.168.43.98:7144/api/Cliente/Login");
+            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/Login");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("COntent-Type", "application/json");
+            connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
             connection.setConnectTimeout(20000);
             connection.setReadTimeout(20000);

@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.ericklemos.tetoverde.Services.ApiService;
 import com.ericklemos.tetoverde.controllers.UserSession;
@@ -19,9 +23,10 @@ public class Perfil extends AppCompatActivity {
 
     private UserSession session = UserSession.getInstance();
     private ApiService apiService = new ApiService();
-    private ClienteDto clienteDto;
+    //private ClienteDto clienteDto;
     private EditText txtNome, txtEmail, txtCnpj, txtTelefone, txtCep, txtLogradouro, txtNumero, txtBairro, txtCidade, txtUf;
     private ExecutorService executorService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +46,45 @@ public class Perfil extends AppCompatActivity {
 
         executorService = Executors.newSingleThreadExecutor();
 
-        clienteDto = apiService.getCliente(session.getUserId());
-        session.setUserName(clienteDto.getFantasia());
+        // chamada assincrona dos dados
+        asyncClienteData();
 
-        txtNome.setText(clienteDto.getFantasia());
-        txtEmail.setText(clienteDto.getEmail());
-        txtCnpj.setText(clienteDto.getCnpj());
-        txtTelefone.setText(clienteDto.getTelefone());
-        txtCep.setText(clienteDto.getCep());
-        txtLogradouro.setText(clienteDto.getRua());
-        txtNumero.setText(clienteDto.getNumero());
-        txtBairro.setText(clienteDto.getBairro());
-        txtCidade.setText(clienteDto.getCidade());
-        txtUf.setText(clienteDto.getUf());
+    }
+
+    public void asyncClienteData(){
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    final ClienteDto clienteDto = apiService.getCliente(session.getUserId());
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if(clienteDto != null){
+                                Log.d("Perfil", "Cliente encontrado: " + clienteDto.getFantasia());
+                                txtNome.setText(clienteDto.getFantasia());
+                                txtEmail.setText(clienteDto.getEmail());
+                                txtCnpj.setText(clienteDto.getCnpj());
+                                txtTelefone.setText(clienteDto.getTelefone());
+                                txtCep.setText(clienteDto.getCep());
+                                txtLogradouro.setText(clienteDto.getRua());
+                                txtNumero.setText(String.valueOf(clienteDto.getNumero()));
+                                txtBairro.setText(clienteDto.getBairro());
+                                txtCidade.setText(clienteDto.getCidade());
+                                txtUf.setText(clienteDto.getUf());
+                            }
+                            else{
+                                Log.e("Perfil", "Cliente não encontrado.");
+                                runOnUiThread(() -> Toast.makeText(Perfil.this, "Erro ao buscar Cadastro", Toast.LENGTH_SHORT).show());
+                            }
+                        }
+                    });
+                }catch (Exception e){
+                    Log.e("Perfil", "Erro ao buscar os dados do cliente: " + e.getMessage(), e);
+                }
+            }
+        });
     }
 
     public void clickHome(View view){

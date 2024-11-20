@@ -42,6 +42,36 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageButton
+                android:id="@+id/imgBtnEditar"
+                android:layout_width="61dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickEditar"
+                android:src="@drawable/edit_icon"
+                app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+                app:layout_constraintStart_toEndOf="@+id/txtPerfilTitulo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imgBtnSave"
+                android:layout_width="61dp"
+                android:layout_height="54dp"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickSalvar"
+                android:src="@drawable/save_icon"
+                app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnEditar"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView2"
                 android:layout_width="match_parent"
@@ -60,6 +90,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Nome: " />
@@ -83,6 +114,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="E-mail: " />
@@ -106,6 +138,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="CNPJ: " />
@@ -129,6 +162,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Telefone: " />
@@ -152,6 +186,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Cep: " />
@@ -175,6 +210,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Rua: " />
@@ -196,6 +232,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Bairro: " />
@@ -217,6 +254,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Cidade: " />
@@ -240,6 +278,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="Nº: " />
@@ -263,23 +302,11 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:enabled="false"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:text="UF " />
             </com.google.android.material.card.MaterialCardView>
-
-            <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:text="Editar"
-                app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.386"
-                app:layout_constraintStart_toEndOf="@+id/txtPerfilTitulo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.357" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

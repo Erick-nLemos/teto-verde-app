@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteX="0dp">
 
         <Button
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnVoltar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -32,7 +32,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btnEsqPass"
+            android:id="@+id/btnProxCad"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
@@ -100,14 +100,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtCadTitulo">
 
                 <EditText
-                    android:id="@+id/editEmail"
+                    android:id="@+id/editCadNome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Nome"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Name" />
+                    android:paddingLeft="15dp" />
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -130,9 +130,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="CNPJ"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="CNPJ" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -153,9 +153,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Telefone"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Telefone" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -176,9 +176,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="CEP"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="CEP" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -199,9 +199,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Rua"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Rua" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -220,9 +220,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Bairro"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Bairro" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -241,9 +241,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Cidade"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Cidade" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -263,9 +263,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Complemento"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Complemento" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -286,9 +286,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Nº"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="Nº" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -309,9 +309,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="UF"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="UF" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

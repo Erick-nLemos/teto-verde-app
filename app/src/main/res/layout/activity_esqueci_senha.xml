@@ -57,9 +57,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="E-mail"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="E-Mail: " />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -143,7 +143,7 @@
             app:srcCompat="@drawable/img_esqueci_pass" />
 
         <Button
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnVoltar"
             android:layout_width="30dp"
             android:layout_height="48dp"
             android:layout_marginLeft="50dp"

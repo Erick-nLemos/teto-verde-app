@@ -118,7 +118,7 @@ public class EditarClienteDto {
 
     @Override
     public String toString() {
-        return "ClienteDto{" +
+        return "EditarClienteDto{" +
                 ",\n fantasia='" + name + '\'' +
                 ",\n cnpj='" + cnpj + '\'' +
                 ",\n email='" + email + '\'' +

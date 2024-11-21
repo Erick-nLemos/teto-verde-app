@@ -36,21 +36,25 @@ public class ProdutoRepolhoVerde extends AppCompatActivity {
     }
 
     public void clickCar(View view){
+        finish();
         Intent tela = new Intent(getApplicationContext(), Carrinho.class);
         startActivity(tela);
     }
 
     public void clickHome(View view){
+        finish();
         Intent tela = new Intent(getApplicationContext(), Market.class);
         startActivity(tela);
     }
 
     public void clickCarrinho(View view){
+        finish();
         Intent tela = new Intent(getApplicationContext(), Carrinho.class);
         startActivity(tela);
     }
 
     public void clickPerfil(View view){
+        finish();
         Intent tela = new Intent(getApplicationContext(), Perfil.class);
         startActivity(tela);
     }

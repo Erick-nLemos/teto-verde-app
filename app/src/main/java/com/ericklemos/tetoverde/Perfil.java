@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.ericklemos.tetoverde.Services.ApiService;
@@ -27,6 +28,7 @@ public class Perfil extends AppCompatActivity {
     private EditarClienteDto editarClienteDto = new EditarClienteDto();
     //private ClienteDto clienteDto;
     private EditText txtNome, txtEmail, txtCnpj, txtTelefone, txtCep, txtLogradouro, txtNumero, txtBairro, txtCidade, txtUf;
+    private ImageButton btnSalvar;
     private ExecutorService executorService;
 
 
@@ -45,6 +47,8 @@ public class Perfil extends AppCompatActivity {
         txtBairro = findViewById(R.id.editTxtBairro);
         txtCidade = findViewById(R.id.editTxtCidade);
         txtUf = findViewById(R.id.editTxtUf);
+        btnSalvar = findViewById(R.id.imgBtnSave);
+        btnSalvar.setEnabled(false);
 
         executorService = Executors.newSingleThreadExecutor();
 
@@ -100,9 +104,11 @@ public class Perfil extends AppCompatActivity {
        txtBairro.setEnabled(true);
        txtCidade.setEnabled(true);
        txtUf.setEnabled(true);
+       btnSalvar.setEnabled(true);
+
    }
 
-   public void salvarEdit(){
+   public void clickSalvar(View view){
 
         editarClienteDto.setName(txtNome.getText().toString());
         editarClienteDto.setEmail(txtEmail.getText().toString());
@@ -110,7 +116,12 @@ public class Perfil extends AppCompatActivity {
         editarClienteDto.setTelefone(txtTelefone.getText().toString());
         editarClienteDto.setCep(txtCep.getText().toString());
         editarClienteDto.setRua(txtLogradouro.getText().toString());
-        editarClienteDto.setNumero(Integer.parseInt(txtNome.getText().toString()));
+        String numeroTexto = txtNumero.getText().toString();
+        if (numeroTexto.isEmpty() || !numeroTexto.matches("\\d+")) {
+           runOnUiThread(() -> Toast.makeText(Perfil.this, "Número inválido!", Toast.LENGTH_SHORT).show());
+           return;
+        }
+        editarClienteDto.setNumero(Integer.parseInt(numeroTexto));
         editarClienteDto.setBairro(txtBairro.getText().toString());
         editarClienteDto.setCidade(txtCidade.getText().toString());
         editarClienteDto.setUf(txtUf.getText().toString());
@@ -118,17 +129,29 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void run() {
                 try{
-                    final ClienteDto clienteDto = apiService.editarCliente(editarClienteDto);
+                    final ClienteDto clienteDto = apiService.editarCliente(session.getUserId(), editarClienteDto);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             if(clienteDto != null ){
-                                runOnUiThread(() -> Toast.makeText(Perfil.this, "Edição Salva com Sucesso!", Toast.LENGTH_SHORT).show());
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        Toast.makeText(Perfil.this, "Edição Salva com Sucesso!", Toast.LENGTH_SHORT).show();
                                         asyncClienteData();
+
+                                        txtNome.setEnabled(false);
+                                        txtEmail.setEnabled(false);
+                                        txtCnpj.setEnabled(false);
+                                        txtTelefone.setEnabled(false);
+                                        txtCep.setEnabled(false);
+                                        txtLogradouro.setEnabled(false);
+                                        txtNumero.setEnabled(false);
+                                        txtBairro.setEnabled(false);
+                                        txtCidade.setEnabled(false);
+                                        txtUf.setEnabled(false);
+                                        btnSalvar.setEnabled(false);
                                     }
                                 });
                             }
@@ -139,7 +162,13 @@ public class Perfil extends AppCompatActivity {
                         }
                     });
                 }catch (Exception e){
-                    Log.e("Perfil", "Erro ao buscar os dados do cliente: " + e.getMessage(), e);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast toast = Toast.makeText(Perfil.this, "Erro inesperado. Tente novamente.", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
                 }
             }
         });

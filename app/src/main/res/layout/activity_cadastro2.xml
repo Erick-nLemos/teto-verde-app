@@ -75,9 +75,9 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="E-mail"
                     android:inputType="text"
-                    android:paddingLeft="15dp"
-                    android:text="E-mail" />
+                    android:paddingLeft="15dp" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -98,9 +98,10 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Crie sua Senha"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Crie sua Senha" />
+                    android:password="true" />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -121,9 +122,10 @@
                     android:layout_height="match_parent"
                     android:background="@color/entradaDados"
                     android:ems="10"
+                    android:hint="Confirme sua Senha"
                     android:inputType="text"
                     android:paddingLeft="15dp"
-                    android:text="Confirmar Senha" />
+                    android:password="true" />
             </com.google.android.material.card.MaterialCardView>
 
 
@@ -140,7 +142,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/btnCadastro"
+            android:id="@+id/btnVoltar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -155,7 +157,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/btnEsqPass"
+            android:id="@+id/btnSalvarCad"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"

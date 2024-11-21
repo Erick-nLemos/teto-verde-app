@@ -3,8 +3,10 @@ package com.ericklemos.tetoverde.dtos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CriarClienteDto {
+public class CriarClienteDto implements Serializable {
 
     @JsonProperty("name")
     private String name;
@@ -130,7 +132,7 @@ public class CriarClienteDto {
     @Override
     public String toString() {
         return "ClienteDto{" +
-                ",\n fantasia='" + name + '\'' +
+                "fantasia='" + name + '\'' +
                 ",\n cnpj='" + cnpj + '\'' +
                 ",\n email='" + email + '\'' +
                 ",\n telefone='" + telefone + '\'' +

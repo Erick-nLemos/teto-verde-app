@@ -59,7 +59,6 @@ public class Login extends AppCompatActivity {
         loginDto.setName(nomeEdit.getText().toString());
         loginDto.setSenha(passwordEdit.getText().toString());
 
-
         executorService.submit(new Runnable() {
             @Override
             public void run() {
@@ -98,7 +97,6 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     public void clickCadastrar(View view){

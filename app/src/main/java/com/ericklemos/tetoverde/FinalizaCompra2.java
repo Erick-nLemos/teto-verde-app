@@ -14,21 +14,23 @@ public class FinalizaCompra2 extends AppCompatActivity {
 
     private UserSession session = UserSession.getInstance();
     QtdPrdt calcQtd = QtdPrdt.getInstance();
-    TextView txtNomeComp, txtNotaF;
+    TextView txtNomeComp, txtNotaF, txtValorTotal;
+    String nf = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finaliza_compra2);
 
         txtNomeComp = findViewById(R.id.txtNome);
-        txtNotaF = findViewById(R.id.txtValorTotal);
+        txtValorTotal = findViewById(R.id.txtValorTotal);
+        txtNotaF = findViewById(R.id.txtNF);
 
         txtNomeComp.setText(session.getUserName());
-        calcValTotal(txtNotaF);
+        gerarNF();
+        calcValTotal(txtValorTotal);
     }
 
     public void gerarNF(){
-        String nf = "";
         if(calcQtd.qtdRuc > 0){
             nf = nf +"Produto: Rúcula\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
         }
@@ -41,6 +43,8 @@ public class FinalizaCompra2 extends AppCompatActivity {
         if(calcQtd.qtdAlfL > 0){
             nf = nf +"Produto: Repolho Verde\t Qtd: "+ calcQtd.qtdRepV +"  Val: R$4,99\n";
         }
+
+        txtNotaF.setText(nf);
     }
 
     public void calcValTotal(TextView textView){

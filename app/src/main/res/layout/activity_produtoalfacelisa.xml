@@ -217,8 +217,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="no"
                 android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickCarrinho"
                 android:src="@drawable/carrinho_icon" />
 
             <ImageButton
@@ -226,8 +227,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="no"
                 android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="clickHome"
                 android:src="@drawable/home_icon" />
 
             <ImageButton

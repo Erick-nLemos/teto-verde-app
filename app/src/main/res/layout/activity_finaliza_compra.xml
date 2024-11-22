@@ -126,9 +126,9 @@
             android:layout_height="match_parent"
             android:background="#4D6F3F"
             android:ems="10"
+            android:hint="CPF/CNPJ do Titular"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="CPF/CNPJ do Titular"
             android:textColor="@android:color/white" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -149,9 +149,9 @@
             android:layout_height="match_parent"
             android:background="#4D6F3F"
             android:ems="10"
+            android:hint="Validade"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Validade"
             android:textColor="@android:color/white" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -172,9 +172,9 @@
             android:layout_height="match_parent"
             android:background="#4D6F3F"
             android:ems="10"
+            android:hint="Número do Cartão"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Número do Cartão"
             android:textColor="@android:color/white" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -196,9 +196,9 @@
             android:layout_height="match_parent"
             android:background="#4D6F3F"
             android:ems="10"
+            android:hint="Nome do Titular"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="Nome do Titular"
             android:textColor="@android:color/white" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -219,9 +219,9 @@
             android:layout_height="match_parent"
             android:background="#4D6F3F"
             android:ems="10"
+            android:hint="CVV"
             android:inputType="text"
             android:paddingLeft="15dp"
-            android:text="CVV"
             android:textColor="@android:color/white" />
     </com.google.android.material.card.MaterialCardView>
 

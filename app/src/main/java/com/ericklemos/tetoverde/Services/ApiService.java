@@ -10,6 +10,7 @@ import com.ericklemos.tetoverde.dtos.ClienteDto;
 import com.ericklemos.tetoverde.dtos.CriarClienteDto;
 import com.ericklemos.tetoverde.dtos.EditarClienteDto;
 import com.ericklemos.tetoverde.dtos.LoginClienteDto;
+import com.ericklemos.tetoverde.dtos.RecupSenhaDto;
 import com.ericklemos.tetoverde.dtos.RespostaApiDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,6 +25,10 @@ import retrofit2.http.POST;
 
 public class ApiService {
     UserSession session = UserSession.getInstance();
+    
+    private String getAutToken(){
+        return session.getToken();
+    }
 
     public ClienteDto getCliente(int id){
         HttpURLConnection connection = null;
@@ -36,6 +41,10 @@ public class ApiService {
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(20000);
             connection.setReadTimeout(20000);
+            String token = getAutToken();
+            if(token != null){
+                connection.setRequestProperty("Authorization", "Bearer "+ token);
+            }
 
             int responseCode = connection.getResponseCode();
             if(responseCode == HttpURLConnection.HTTP_OK){
@@ -116,6 +125,54 @@ public class ApiService {
         return null;
     }
 
+    public RespostaApiDto emailValid(RecupSenhaDto recupSenhaDto){
+        HttpURLConnection connection = null;
+        try{
+            IgnoreSSL.ignorarCertificadosSSL();
+
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(recupSenhaDto);
+            RespostaApiDto resposta = null;
+
+            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/RecuperarSenha");
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
+            connection.setConnectTimeout(20000);
+            connection.setReadTimeout(20000);
+
+            try(BufferedOutputStream outputStream = new BufferedOutputStream(connection.getOutputStream())){
+                outputStream.write(json.getBytes());
+                outputStream.flush();
+            }
+
+            int responseCod = connection.getResponseCode();
+            if(responseCod == HttpURLConnection.HTTP_OK){
+                try(BufferedReader leitor = new BufferedReader(new InputStreamReader(connection.getInputStream()))){
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while((line = leitor.readLine()) != null){
+                        response.append(line);
+                    }
+                    resposta = mapper.readValue(response.toString(), RespostaApiDto.class);
+                    connection.disconnect();
+                    return resposta;
+                }
+            }else{
+                Log.e("ApiService", "Erro na API: Código de resposta " + responseCod);
+            }
+        }catch (Exception e){
+            Log.e("ApiService", "Erro ao consumir a API: "+ e.getMessage(), e);
+            return null;
+        }finally {
+            if(connection != null){
+                connection.disconnect();
+            }
+        }
+        return null;
+    }
+
     public ClienteDto editarCliente(int id, EditarClienteDto editarClienteDto){
         HttpURLConnection connection = null;
         ClienteDto cliente = null;
@@ -129,6 +186,10 @@ public class ApiService {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("PUT");
             connection.setRequestProperty("Content-Type", "application/json");
+            String token = getAutToken();
+            if(token != null){
+                connection.setRequestProperty("Authorization", "Bearer "+ token);
+            }
             connection.setDoOutput(true);
             connection.setConnectTimeout(20000);
             connection.setReadTimeout(20000);
@@ -185,6 +246,10 @@ public class ApiService {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
+            String token = getAutToken();
+            if(token != null){
+                connection.setRequestProperty("Authorization", "Bearer "+ token);
+            }
             connection.setReadTimeout(20000);
             connection.setConnectTimeout(20000);
 

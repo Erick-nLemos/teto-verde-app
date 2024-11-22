@@ -2,8 +2,9 @@ package com.ericklemos.tetoverde.controllers;
 
 public class UserSession {
     private static UserSession instance;
-    private int userId = 2;
+    private int userId;
     private String userName;
+    private String token;
 
     private UserSession(){}
 
@@ -28,5 +29,13 @@ public class UserSession {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

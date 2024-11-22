@@ -13,6 +13,9 @@ public class RespostaApiDto {
     @JsonProperty("status")
     private boolean status;
 
+    @JsonProperty("token")
+    private String token;
+
     // Getters e Setters
     public ClienteDto getDados() {
         return dados;
@@ -38,12 +41,20 @@ public class RespostaApiDto {
         this.status = status;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
         return "RespostaApiDto{" +
                 "dados=" + dados +
                 ", mensagem='" + mensagem + '\'' +
-                ", status=" + status + '}';
-
+                ", status=" + status +
+                ", token=" + token + '}';
     }
 }

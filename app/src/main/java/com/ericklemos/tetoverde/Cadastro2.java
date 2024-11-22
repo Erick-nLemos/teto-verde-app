@@ -46,6 +46,10 @@ public class Cadastro2 extends AppCompatActivity {
             txtEditEmail.setError("Campo Obrigatório");
             txtEditEmail.requestFocus();
             return;
+        }else if(!txtEditEmail.getText().toString().contains("@")){
+            txtEditEmail.setError("E-mail Inválido!");
+            txtEditEmail.requestFocus();
+            return;
         }
         if(txtEditPass.getText().toString().isEmpty()){
             txtEditPass.setError("Campo Obrigatório");

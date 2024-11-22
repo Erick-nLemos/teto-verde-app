@@ -70,12 +70,12 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEntrar">
 
         <EditText
-            android:id="@+id/editNome"
+            android:id="@+id/editEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/entradaDados"
             android:ems="10"
-            android:hint="Nome"
+            android:hint="E-mail"
             android:inputType="text"
             android:paddingLeft="15dp" />
 

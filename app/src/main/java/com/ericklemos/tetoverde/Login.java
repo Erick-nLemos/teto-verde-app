@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
 
     Intent tela;
     private UserSession session = UserSession.getInstance();
-    private EditText nomeEdit, passwordEdit;
+    private EditText emailEdit, passwordEdit;
     private LoginClienteDto loginDto = new LoginClienteDto();
     private ApiService apiService = new ApiService();
     private ExecutorService executorService;
@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        nomeEdit = findViewById(R.id.editNome);
+        emailEdit = findViewById(R.id.editEmailLogin);
         passwordEdit = findViewById(R.id.editPassword);
 
         executorService = Executors.newSingleThreadExecutor();
@@ -47,16 +47,20 @@ public class Login extends AppCompatActivity {
     }
 
     public void clickAcessar(View view){
-        if(nomeEdit.getText().toString().isEmpty()){
-            nomeEdit.setError("Campo Obrigatório");
-            nomeEdit.requestFocus();
+        if(emailEdit.getText().toString().isEmpty()){
+            emailEdit.setError("Campo Obrigatório");
+            emailEdit.requestFocus();
+            return;
+        }else if(!emailEdit.getText().toString().contains("@")){
+            emailEdit.setError("E-mail Inválido!");
+            emailEdit.requestFocus();
             return;
         }
         if(passwordEdit.getText().toString().isEmpty()){
             passwordEdit.setError("Campo Obrigatório");
             return;
         }
-        loginDto.setName(nomeEdit.getText().toString());
+        loginDto.setEmail(emailEdit.getText().toString());
         loginDto.setSenha(passwordEdit.getText().toString());
 
         executorService.submit(new Runnable() {
@@ -69,6 +73,7 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void run() {
                             if (login != null && login.isStatus()) {
+                                session.setToken(login.getToken());
                                 session.setUserName(login.getDados().getFantasia());
                                 session.setUserId(login.getDados().getIdCodCliente());
                                 toast = Toast.makeText(Login.this, login.getMensagem(), Toast.LENGTH_SHORT);

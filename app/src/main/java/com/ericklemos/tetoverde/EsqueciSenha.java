@@ -11,11 +11,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ericklemos.tetoverde.Services.ApiService;
+import com.ericklemos.tetoverde.Services.EmailService;
 import com.ericklemos.tetoverde.dtos.RecupSenhaDto;
 import com.ericklemos.tetoverde.dtos.RespostaApiDto;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import javax.mail.MessagingException;
 
 public class EsqueciSenha extends AppCompatActivity {
 
@@ -58,11 +61,30 @@ public class EsqueciSenha extends AppCompatActivity {
                             if(emailValidado != null && emailValidado.isStatus()){
                                 Toast.makeText(EsqueciSenha.this, emailValidado.getMensagem(), Toast.LENGTH_SHORT).show();
 
+                                String toEmail, content, subject;
+                                content = "Olá, "+ emailValidado.getDados().getFantasia() + "!\n\n\n" +
+                                        "A sua Senha é: "+ emailValidado.getDados().getSenha() +"\n\n Atenciosamente, Teto Verde.";
+                                subject = "Recuperação de Senha, Teto Verde.";
+                                toEmail = emailValidado.getDados().getEmail();
+                                try{
+                                    EmailService.sendEmail(toEmail, subject, content);
+                                    Toast.makeText(EsqueciSenha.this, "E-mail enviado!", Toast.LENGTH_SHORT).show();
+                                }catch (MessagingException e){
+                                    e.printStackTrace();
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(EsqueciSenha.this, "Erro ao enviar e-mail.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+
                                 finish();
                                 Intent tela = new Intent(getApplicationContext(), Login.class);
                                 startActivity(tela);
                             }else{
-
+                                Log.e("Login", "E-mail inválido.");
+                                Toast.makeText(EsqueciSenha.this, "E-mail inválido.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

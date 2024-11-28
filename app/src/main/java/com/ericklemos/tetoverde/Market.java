@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ericklemos.tetoverde.controllers.QtdPrdt;
 import com.ericklemos.tetoverde.controllers.UserSession;
+
+import java.util.ArrayList;
 
 public class Market extends AppCompatActivity {
 
     UserSession session = UserSession.getInstance();
-    QtdPrdt calcQtd = QtdPrdt.getInstance();
+    public static ArrayList<Produto> listaProdt = new ArrayList<>();
     TextView txtQtdRuc, txtQtdAlfL, txtQtdAlfC, txtQtdRepV, txtMarketTitulo;
 
     @Override
@@ -27,60 +28,125 @@ public class Market extends AppCompatActivity {
         txtQtdRepV = findViewById(R.id.txtQtdRepV);
         txtMarketTitulo = findViewById(R.id.txtMarketTitulo);
 
-        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
-        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
-        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
-        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
+        listaProdt.add(new Produto("Rucula", 4.99));
+        listaProdt.add(new Produto("Alface Lisa", 1.49));
+        listaProdt.add(new Produto("Alface Crespa", 1.99));
+        listaProdt.add(new Produto("Repolho Verde", 4.99));
+
         txtMarketTitulo.setText("Olá, "+ session.getUserName());
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Rucula")) {
+                txtQtdRuc.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Lisa")) {
+                txtQtdAlfL.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Crespa")) {
+                txtQtdAlfC.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Repolho Verde")) {
+                txtQtdRepV.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
     }
 
 
     public void clickSomar1(View view){
-        calcQtd.qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        calcQtd.qtdRuc++;
-        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Rucula")) {
+                produto.setQtd(produto.getQtd() + 1);
+                txtQtdRuc.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
     }
 
     public void clickSub1(View view){
-        calcQtd.qtdRuc = Integer.parseInt(txtQtdRuc.getText().toString());
-        calcQtd.qtdRuc--;
-        txtQtdRuc.setText(String.format("%d", calcQtd.qtdRuc));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Rucula")) {
+                if(produto.getQtd() > 0){
+                    produto.setQtd(produto.getQtd() - 1);
+                    txtQtdRuc.setText(String.format("%d", produto.getQtd()));
+                }
+                break;
+            }
+        }
     }
 
     public void clickSomar2(View view){
-        calcQtd.qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
-        calcQtd.qtdAlfL++;
-        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Lisa")) {
+                produto.setQtd(produto.getQtd() + 1);
+                txtQtdAlfL.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
     }
 
     public void clickSub2(View view){
-        calcQtd.qtdAlfL = Integer.parseInt(txtQtdAlfL.getText().toString());
-        calcQtd.qtdAlfL--;
-        txtQtdAlfL.setText(String.format("%d", calcQtd.qtdAlfL));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Lisa")) {
+                if(produto.getQtd() > 0){
+                    produto.setQtd(produto.getQtd() - 1);
+                    txtQtdAlfL.setText(String.format("%d", produto.getQtd()));
+                }
+                break;
+            }
+        }
     }
 
     public void clickSomar3(View view){
-        calcQtd.qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
-        calcQtd.qtdAlfC++;
-        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Crespa")) {
+                produto.setQtd(produto.getQtd() + 1);
+                txtQtdAlfC.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
     }
 
     public void clickSub3(View view){
-        calcQtd.qtdAlfC = Integer.parseInt(txtQtdAlfC.getText().toString());
-        calcQtd.qtdAlfC--;
-        txtQtdAlfC.setText(String.format("%d", calcQtd.qtdAlfC));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Alface Crespa")) {
+                if(produto.getQtd() > 0){
+                    produto.setQtd(produto.getQtd() - 1);
+                    txtQtdAlfC.setText(String.format("%d", produto.getQtd()));
+                }
+                break;
+            }
+        }
     }
 
     public void clickSomar4(View view){
-        calcQtd.qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
-        calcQtd.qtdRepV++;
-        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Repolho Verde")) {
+                produto.setQtd(produto.getQtd() + 1);
+                txtQtdRepV.setText(String.format("%d", produto.getQtd()));
+                break;
+            }
+        }
     }
 
     public void clickSub4(View view){
-        calcQtd.qtdRepV = Integer.parseInt(txtQtdRepV.getText().toString());
-        calcQtd.qtdRepV--;
-        txtQtdRepV.setText(String.format("%d", calcQtd.qtdRepV));
+        for (Produto produto : listaProdt) {
+            if (produto.getNome().equals("Repolho Verde")) {
+                if(produto.getQtd() > 0){
+                    produto.setQtd(produto.getQtd() - 1);
+                    txtQtdRepV.setText(String.format("%d", produto.getQtd()));
+                }
+                break;
+            }
+        }
     }
 
     // chamando tela de descricao do prodt

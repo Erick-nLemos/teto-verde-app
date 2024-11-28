@@ -46,7 +46,7 @@
                 android:id="@+id/imgBtnEditar"
                 android:layout_width="61dp"
                 android:layout_height="54dp"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginBottom="10dp"
                 android:adjustViewBounds="true"
                 android:backgroundTint="@color/lightBack"
@@ -61,6 +61,7 @@
                 android:id="@+id/imgBtnSave"
                 android:layout_width="61dp"
                 android:layout_height="54dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginBottom="10dp"
                 android:adjustViewBounds="true"
                 android:backgroundTint="@color/lightBack"
@@ -68,9 +69,23 @@
                 android:onClick="clickSalvar"
                 android:src="@drawable/save_icon"
                 app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imgBtnEditar"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="61dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="27dp"
+                android:backgroundTint="@color/lightBack"
+                android:contentDescription="no"
+                android:onClick="deletarCliente"
+                android:src="@drawable/trash_icon"
+                app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnSave"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView2"

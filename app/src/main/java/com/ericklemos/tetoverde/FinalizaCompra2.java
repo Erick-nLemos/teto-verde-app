@@ -10,10 +10,13 @@ import android.widget.TextView;
 import com.ericklemos.tetoverde.controllers.QtdPrdt;
 import com.ericklemos.tetoverde.controllers.UserSession;
 
+import java.util.ArrayList;
+
 public class FinalizaCompra2 extends AppCompatActivity {
 
     private UserSession session = UserSession.getInstance();
     QtdPrdt calcQtd = QtdPrdt.getInstance();
+    ArrayList<Produto> listaProdutos = Market.listaProdt;
     TextView txtNomeComp, txtNotaF, txtValorTotal;
     String nf = "";
     @Override
@@ -31,18 +34,29 @@ public class FinalizaCompra2 extends AppCompatActivity {
     }
 
     public void gerarNF(){
-        if(calcQtd.qtdRuc > 0){
-            nf = nf +"Produto: Rúcula\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
+        for(Produto produto : listaProdutos){
+            if(produto.getNome().equals("Rucula")){
+                if(produto.getQtd() > 0){
+                    nf = nf +"Produto: Rúcula\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
+                }
+            }
+            if(produto.getNome().equals("Alface Lisa")){
+                if(produto.getQtd() > 0){
+                    nf = nf +"Produto: Alface Lisa\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
+                }
+            }
+            if(produto.getNome().equals("Alface Crespa")){
+                if(produto.getQtd() > 0){
+                    nf = nf +"Produto: Alface Crespa\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
+                }
+            }
+            if(produto.getNome().equals("Repolho Verde")){
+                if(produto.getQtd() > 0){
+                    nf = nf +"Produto: Repolho Verde\t Qtd: "+ calcQtd.qtdRuc +"  Val: R$4,99\n";
+                }
+            }
         }
-        if(calcQtd.qtdAlfL > 0){
-            nf = nf +"Produto: Alface Lisa\t Qtd: "+ calcQtd.qtdAlfL +"  Val: R$1,49\n";
-        }
-        if(calcQtd.qtdAlfC > 0){
-            nf = nf +"Produto: Alface Crespa\t Qtd: "+ calcQtd.qtdAlfC +"  Val: R$1,99\n";
-        }
-        if(calcQtd.qtdAlfL > 0){
-            nf = nf +"Produto: Repolho Verde\t Qtd: "+ calcQtd.qtdRepV +"  Val: R$4,99\n";
-        }
+
 
         txtNotaF.setText(nf);
     }

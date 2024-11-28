@@ -3,6 +3,7 @@ package com.ericklemos.tetoverde;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -16,6 +17,7 @@ import com.ericklemos.tetoverde.Services.ApiService;
 import com.ericklemos.tetoverde.controllers.UserSession;
 import com.ericklemos.tetoverde.dtos.ClienteDto;
 import com.ericklemos.tetoverde.dtos.EditarClienteDto;
+import com.ericklemos.tetoverde.dtos.RespostaApiDto;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -170,6 +172,39 @@ public class Perfil extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+   }
+
+   public void deletarCliente(View view){
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                final RespostaApiDto resposta = apiService.deletarCliente(session.getUserId());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(resposta.isStatus()){
+
+                            // Limpar dados de sessão, se necessário
+                            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.clear();
+                            editor.apply();
+
+                            // Ir para a tela de login e fechar todas as outras telas
+                            Intent intent = new Intent(getApplicationContext(), Login.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            Toast toast = Toast.makeText(Perfil.this, "Cadastro Excluido!", Toast.LENGTH_SHORT);
+                            // Finalizar a atividade atual explicitamente
+                            finish();;
+                        }
+                        else{
+                            Toast toast = Toast.makeText(Perfil.this, "Falha ao Excluir Cadastro.", Toast.LENGTH_SHORT);
+                        }
+                    }
+                });
             }
         });
    }

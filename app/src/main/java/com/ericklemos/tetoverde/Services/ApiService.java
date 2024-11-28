@@ -36,7 +36,7 @@ public class ApiService {
             IgnoreSSL.ignorarCertificadosSSL();
             ClienteDto cliente = null;
 
-            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/ListarClientes/" + id);
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/ListarClientes/" + id);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(20000);
@@ -86,7 +86,7 @@ public class ApiService {
             String json = mapper.writeValueAsString(loginClienteDto);
             RespostaApiDto resposta = null;
 
-            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/Login");
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/Login");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -134,7 +134,7 @@ public class ApiService {
             String json = mapper.writeValueAsString(recupSenhaDto);
             RespostaApiDto resposta = null;
 
-            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/RecuperarSenha");
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/RecuperarSenha");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -182,7 +182,7 @@ public class ApiService {
             ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(editarClienteDto);
 
-            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/EditarCliente/"+ id);
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/EditarCliente/"+ id);
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("PUT");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -242,7 +242,7 @@ public class ApiService {
             ObjectMapper mapper = new ObjectMapper();
             String json = mapper.writeValueAsString(criarClienteDto);
 
-            URL url = new URL("https://fazendaurbanaapi-asa4b2dvajd9b0cf.brazilsouth-01.azurewebsites.net/api/Cliente/CriarCliente");
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/CriarCliente");
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
@@ -288,6 +288,53 @@ public class ApiService {
             }
         }
         return cliente;
+    }
+
+    public RespostaApiDto deletarCliente(int id){
+        HttpURLConnection connection = null;
+        RespostaApiDto resposta = null;
+        try{
+            IgnoreSSL.ignorarCertificadosSSL();
+
+            URL url = new URL("https://fazendaapiemerson.azurewebsites.net/api/Cliente/DeletarCliente/" + id);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("DELETE");
+            connection.setConnectTimeout(20000);
+            connection.setReadTimeout(20000);
+            String token = getAutToken();
+            if(token != null){
+                connection.setRequestProperty("Authorization", "Bearer "+ token);
+            }
+
+            int responseCode = connection.getResponseCode();
+            if(responseCode == HttpURLConnection.HTTP_OK){
+                BufferedReader leitor = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder response = new StringBuilder();
+                String line;
+
+                while((line = leitor.readLine()) != null){
+                    response.append(line);
+                }
+                leitor.close();
+
+                ObjectMapper mapper = new ObjectMapper();
+                resposta = mapper.readValue(response.toString(), RespostaApiDto.class);
+            }else{
+                Log.e("ApiService", "Erro na requisição. Código de resposta: " + responseCode);
+            }
+
+            connection.disconnect();
+            return resposta;
+
+        }catch (Exception e){
+            Log.e("ApiService", "Erro ao consumir a API: "+ e.getMessage(), e);
+            connection.disconnect();
+        }finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+        return null;
     }
 
 }

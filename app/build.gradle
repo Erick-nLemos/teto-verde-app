@@ -29,6 +29,17 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    packagingOptions {
+        resources {
+            excludes += [
+                    "META-INF/NOTICE.md",
+                    "META-INF/NOTICE.txt",
+                    "META-INF/LICENSE.md",
+                    "META-INF/LICENSE.txt"
+            ]
+        }
+    }
 }
 
 dependencies {
@@ -45,4 +56,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-jackson:2.9.0'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation 'com.sun.mail:android-mail:1.6.7'
+    implementation 'com.sun.mail:android-activation:1.6.7'
 }
